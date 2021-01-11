@@ -5,7 +5,12 @@ body{
   color: #0A0A0A;
   padding: 10px;
 }
+@media (max-width: 600px) {
+    body{ padding: 0; width: 95%; max-width:100% }
+}
 .title, .menu { text-align: center }
-h2 a{ text-decoration: none; color: #2F434D }
-.post { margin: 1em 0; float: left }
+a{ color: #203DF0;}
+h1 a, h2 a, .menu a{ text-decoration: none }
+h2 a{ color: #2F434D }
+.post { margin: 1em 0; float: left; width: 100% }
 .date{ color: #4A4A4A }
