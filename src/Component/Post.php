@@ -18,7 +18,7 @@ class Post
         $this->app = $app;
     }
 
-    public function show($postSlug): void
+    public function show(string $postSlug): void
     {
         $this->post = $this->postService->find($postSlug);
         $this->app->setTitle($this->post->title);
@@ -26,19 +26,18 @@ class Post
 
     public function __toString(): string
     {
-        if ($this->post) {
-            $params = Params::component(['post' => $this->post]);
-            return "<PostRow {$params} />";
-        }
+        \ob_start(); ?>
 
-        $posts = $this->postService->list();
-        $contents = [];
-        foreach ($posts as $post) { 
-            $params = Params::component(['post' => $post]);
-            $contents[] = "<PostRow {$params} type='excerpt' />";
-        }
+            <?php if ($this->post): ?>
+                <PostRow <?= Params::component(['post' => $this->post]) ?> />
+            <?php else: ?>
+                <?php foreach ($this->postService->list() as $post): ?> 
+                    <PostRow type="excerpt" <?= Params::component(['post' => $post]) ?> />
+                <?php endforeach; ?>
+            <?php endif; ?>
 
-        return implode("\n", $contents);
+<?php
+        return \ob_get_clean();
     }
 }
 

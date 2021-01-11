@@ -32,7 +32,7 @@ class App
     public function __toString(): string
     {
         $title = $this->currentTitle ?: $this->siteTitle;
-        ob_start(); ?><!doctype html>
+        \ob_start(); ?><!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -52,6 +52,6 @@ class App
     <FernetClientScript />
   </body>
 </html><?php
-    return ob_get_clean();
+    return \ob_get_clean();
     }
 }
