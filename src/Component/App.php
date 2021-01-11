@@ -18,12 +18,13 @@ class App
         $this->siteTitle = $_ENV['TITLE'];
     }
 
-    public function about()
+    public function about(): void
     {
         $this->showAbout = true;
+        $this->setTitle('About me');
     }
 
-    public function setTitle($title)
+    public function setTitle($title): void
     {
         $this->currentTitle = "{$title} - {$this->siteTitle}";
     }
@@ -41,16 +42,13 @@ class App
   </head>
   <body>
     <h2 class="title"><a href="/"><?= $this->siteTitle ?></a></h2>
-    <p class="menu">
-        <a @onClick="about">About me</a> •
-        <a href="https://twitter.com/4lb0">Twitter</a> •
-        <a href="https://github.com/4lb0">Github</a>
-    </p>
+    <Menu />
     <?php if (!$this->showAbout): ?>
-    <Post />
+        <Post />
     <?php else: ?>
-    <AboutMe />
+        <AboutMe />
     <?php endif; ?>
+    <Menu />
     <FernetClientScript />
   </body>
 </html><?php
