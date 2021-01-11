@@ -1,0 +1,11 @@
+body{
+  font-family: Helvetica, Arial, sans-serif;
+  max-width: 640px;
+  margin: auto;
+  color: #0A0A0A;
+  padding: 10px;
+}
+.title, .menu { text-align: center }
+h2 a{ text-decoration: none; color: #2F434D }
+.post { margin: 1em 0; float: left }
+.date{ color: #4A4A4A }
