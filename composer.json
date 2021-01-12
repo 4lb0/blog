@@ -1,6 +1,6 @@
 {
-    "name": "fernet/fernet",
-    "description": "The Fernet Framework",
+    "name": "albo/blog",
+    "description": "Static markdown blog created with Fernet",
     "type": "project",
     "require": {
         "fernet/framework": "^0.1",
