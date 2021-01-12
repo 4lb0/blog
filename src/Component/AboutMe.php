@@ -16,9 +16,9 @@ class AboutMe
                 I've beeing programming for the last 15+ years.
             </p>
             <p>
-                This is a minimalist blog written with <a href="https://github.com/pragmore/fernet">Fernet</a>.
+                This is a minimalist blog written with <ExternalLink href="https://github.com/pragmore/fernet">Fernet</ExternalLink>.
                 Yes, another boring markdown blog.
-                You can still see the full code <a href="https://github.com/4lb0/blog">here</a>.
+                You can still see the full code <ExternalLink href="https://github.com/4lb0/blog">here</ExternalLink>.
             </p>
 EOH;
     }

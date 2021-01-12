@@ -12,7 +12,7 @@ class Menu
         $this->app = $app;
     }
 
-    public function about(): void
+    public function handleAbout(): void
     {
         $this->app->about();
     }
@@ -22,12 +22,12 @@ class Menu
         \ob_start(); ?>
             <p class="menu">
                 <a href="/">Home</a>
-                • <a @onClick="about">About me</a>
+                ∣ <a @onClick="handleAbout">About me</a>
                 <?php if (isset($_ENV['TWITTER'])): ?>
-                    • <a href="<?= $_ENV['TWITTER'] ?>">Twitter</a>
+                    ∣ <ExternalLink href="<?= $_ENV['TWITTER'] ?>">Twitter</ExternalLink>
                 <?php endif; ?>
                 <?php if (isset($_ENV['GITHUB'])): ?>
-                    • <a href="<?= $_ENV['GITHUB'] ?>">Github</a>
+                    ∣ <ExternalLink href="<?= $_ENV['GITHUB'] ?>">Github</ExternalLink>
                 <?php endif; ?>
             </p><?php 
         return \ob_get_clean();

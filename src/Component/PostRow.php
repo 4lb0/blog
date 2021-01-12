@@ -18,7 +18,7 @@ class PostRow
         $this->postComponent = $postComponent;
     }
     
-    public function show($postSlug): void
+    public function handleViewPost(string $postSlug): void
     {
         $this->postComponent->show($postSlug);
     }
@@ -34,14 +34,14 @@ class PostRow
 
     public function __toString(): string
     {
-        $link = '<a @onClick="show(' . Params::event($this->post->slug) . ')">';
+        $link = '<a @onClick="handleViewPost(' . Params::event($this->post->slug) . ')">';
         $content = $this->addLinkToH1($link, $this->post->{$this->type});
         \ob_start(); ?>
             <div class="post">
                 <PostDate timestamp="<?= $this->post->datetime ?>" />
                 <?= $content ?>
                 <?php if ($this->type == 'excerpt'): ?>
-                <p><?= $link?>Read more</a></p>
+                <p><?= $link?>Read more ⭢</a></p>
                 <?php endif ; ?>
             </div><?php 
         return \ob_get_clean();
