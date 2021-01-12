@@ -3,6 +3,7 @@ declare(strict_types=1);
 
 namespace App\Service;
 
+use App\Entity\Post;
 use Parsedown;
 use Fernet\Core\NotFoundException;
 
@@ -22,17 +23,17 @@ class PostService
         return sprintf(static::FILES, $filename);
     }
 
-    public function parseFile($file): object
+    public function parseFile($file): Post 
     {
         $content = \file_get_contents($file);
         list($excerpt, $other) = explode(static::MORE, $content);
-        return (object) [
-            'title' => trim(str_replace('#', '', strtok($content, "\n"))),
-            'excerpt' => $this->markdown->text($excerpt),
-            'slug' => \basename($file, '.md'),
-            'datetime' => \filemtime($file),
-            'content' => $this->markdown->text($excerpt . $other),
-        ];
+        $post = new Post;
+        $post->title = trim(str_replace('#', '', strtok($content, "\n")));
+        $post->excerpt = $this->markdown->text($excerpt);
+        $post->slug = \basename($file, '.md');
+        $post->datetime = \filemtime($file);
+        $post->content = $this->markdown->text($excerpt . $other);
+        return $post;
     }
 
     public function list(): array
@@ -46,7 +47,7 @@ class PostService
         return $posts;
     }
 
-    public function find(string $slug): object 
+    public function find(string $slug): Post 
     {
         $filename = $this->filename($slug);
         if (\file_exists($filename)) {

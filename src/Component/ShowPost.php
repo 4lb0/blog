@@ -5,12 +5,13 @@ namespace App\Component;
 
 use Fernet\Params;
 use App\Service\PostService;
+use App\Entity\Post;
 
-class Post 
+class ShowPost 
 {
     private PostService $postService;
     private App $app;
-    private $post;
+    private ?Post $post = null;
 
     public function __construct(PostService $postService, App $app)
     {

@@ -4,23 +4,24 @@ declare(strict_types=1);
 namespace App\Component;
 
 use Fernet\Params;
+use App\Entity\Post;
 
 class PostRow
 {
-    public $post;
+    public Post $post;
     public string $type = 'content';
 
-    private Post $postComponent;
+    private ShowPost $showPost;
 
     
-    public function __construct(Post $postComponent)
+    public function __construct(ShowPost $showPost)
     {
-        $this->postComponent = $postComponent;
+        $this->showPost = $showPost;
     }
     
     public function handleViewPost(string $postSlug): void
     {
-        $this->postComponent->show($postSlug);
+        $this->showPost->show($postSlug);
     }
 
     private function addLinkToH1(string $link, string $content): string
