@@ -1,6 +1,7 @@
 # A different approach with Fernet 
 
-## Olympi Calydonia ontibus accensum generi dubitat
+
+Are you tired of doing Controllers and Views?
 
 Lorem markdownum, **cervice properent** titubantem patriam concessit multis
 maxima. Non vitam feris, secreta et neque incurvata esse est. Medii nec haec,
