@@ -4,7 +4,7 @@
 
 Lorem markdownum, **cervice properent** titubantem patriam concessit multis
 maxima. Non vitam feris, secreta et neque incurvata esse est. Medii nec haec,
-deae super Pisaeae rerum thalamos, o aequora omnes ferrumque sternis: grande
+super Pisaeae rerum thalamos, o aequora omnes ferrumque sternis: grande
 Aetne io. Distantia alitibus socios ferox in inmensum severa illi, pars neque
 invidit auctor nisi flores praerupit saepe, terram.
 
