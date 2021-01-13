@@ -41,9 +41,9 @@ class PostService
         $posts = [];
         foreach (\glob($this->filename('*')) as $file) {
             $post = $this->parseFile($file);
-            $posts[$post->datetime] = $post;
+            $posts[$post->datetime . $post->slug] = $post;
         }
-        \krsort($posts, SORT_NUMERIC);
+        \krsort($posts);
         return $posts;
     }
 
