@@ -1,6 +1,6 @@
 # Plebemque et non ipsa
 
-## Et Olympi Calydonia montibus accensum generi dubitat
+## Olympi Calydonia montibus accensum generi dubitat
 
 Lorem markdownum, **cervice properent** titubantem patriam concessit multis
 maxima. Non vitam feris, secreta et neque incurvata esse est. Medii nec haec,
