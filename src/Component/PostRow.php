@@ -35,7 +35,7 @@ class PostRow
 
     public function __toString(): string
     {
-        $link = '<a @onClick="handleViewPost(' . Params::event($this->post->slug) . ')">';
+        $link = '<a @onClick="handleViewPost(' . Params::event(['postSlug' => $this->post->slug]) . ')">';
         $content = $this->addLinkToH1($link, $this->post->{$this->type});
         \ob_start(); ?>
             <div class="post">

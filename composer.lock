@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "3dd1e1267ae574fd63de25c18312d5b2",
+    "content-hash": "690be4e9086795b11694ef26c92b5f96",
     "packages": [
         {
             "name": "erusev/parsedown",
@@ -58,22 +58,23 @@
         },
         {
             "name": "fernet/framework",
-            "version": "v0.1.1",
+            "version": "v0.1.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/pragmore/fernet-core.git",
-                "reference": "68825b2542f44e82253a889b25ae52425d12a0da"
+                "reference": "c4e9dac52b54d9f0a1daa5549e3bd4066f7c5d80"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/pragmore/fernet-core/zipball/68825b2542f44e82253a889b25ae52425d12a0da",
-                "reference": "68825b2542f44e82253a889b25ae52425d12a0da",
+                "url": "https://api.github.com/repos/pragmore/fernet-core/zipball/c4e9dac52b54d9f0a1daa5549e3bd4066f7c5d80",
+                "reference": "c4e9dac52b54d9f0a1daa5549e3bd4066f7c5d80",
                 "shasum": ""
             },
             "require": {
                 "ext-json": "*",
                 "league/container": "^3.3",
                 "monolog/monolog": "^2.2",
+                "nikic/fast-route": "^1.3",
                 "symfony/http-foundation": "^5.2",
                 "vlucas/phpdotenv": "^5.2"
             },
@@ -100,9 +101,9 @@
             "description": "The Fernet Framework",
             "support": {
                 "issues": "https://github.com/pragmore/fernet-core/issues",
-                "source": "https://github.com/pragmore/fernet-core/tree/v0.1.1"
+                "source": "https://github.com/pragmore/fernet-core/tree/v0.1.2"
             },
-            "time": "2021-01-11T00:43:34+00:00"
+            "time": "2021-01-13T01:43:03+00:00"
         },
         {
             "name": "graham-campbell/result-type",
@@ -341,6 +342,56 @@
                 }
             ],
             "time": "2020-12-14T13:15:25+00:00"
+        },
+        {
+            "name": "nikic/fast-route",
+            "version": "v1.3.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/nikic/FastRoute.git",
+                "reference": "181d480e08d9476e61381e04a71b34dc0432e812"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/nikic/FastRoute/zipball/181d480e08d9476e61381e04a71b34dc0432e812",
+                "reference": "181d480e08d9476e61381e04a71b34dc0432e812",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^4.8.35|~5.7"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "FastRoute\\": "src/"
+                },
+                "files": [
+                    "src/functions.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Nikita Popov",
+                    "email": "nikic@php.net"
+                }
+            ],
+            "description": "Fast request router for PHP",
+            "keywords": [
+                "router",
+                "routing"
+            ],
+            "support": {
+                "issues": "https://github.com/nikic/FastRoute/issues",
+                "source": "https://github.com/nikic/FastRoute/tree/master"
+            },
+            "time": "2018-02-13T20:26:39+00:00"
         },
         {
             "name": "paragonie/anti-csrf",

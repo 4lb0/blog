@@ -26,7 +26,7 @@ class App
 
     public function setTitle($title): void
     {
-        $this->currentTitle = "{$title} - {$this->siteTitle}";
+        $this->currentTitle = "{$title}. {$this->siteTitle}";
     }
 
     public function __toString(): string

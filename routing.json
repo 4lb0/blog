@@ -1,0 +1,4 @@
+{
+    "/about": "Menu.handleAbout",
+    "/{postSlug}": "PostRow.handleViewPost"
+}
