@@ -1,6 +1,6 @@
 # Plebemque et non ipsa
 
-## Olympi montibus accensum generi dubitat
+## Olympi Calydonia ontibus accensum generi dubitat
 
 Lorem markdownum, **cervice properent** titubantem patriam concessit multis
 maxima. Non vitam feris, secreta et neque incurvata esse est. Medii nec haec,
@@ -10,8 +10,6 @@ invidit auctor nisi flores praerupit saepe, terram.
 
     power_samba -= install_password / -1 * snippet_keyboard - diskBootCmos(ram,
             tag, 4);
-    tftp = isa(guid / northbridge_nvram, saas_io(2 + ctp));
-    firmware_install *= file_reciprocal(array, buffer_slashdot);
 
 ----
 
