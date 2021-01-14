@@ -41,7 +41,7 @@ class App
     <title><?= $title ?></title>
   </head>
   <body>
-    <h2 class="title"><a href="/"><?= $this->siteTitle ?></a></h2>
+    <h2 class="center"><a href="/"><?= $this->siteTitle ?></a></h2>
     <Menu />
     <?php if (!$this->showAbout): ?>
         <ShowPost />

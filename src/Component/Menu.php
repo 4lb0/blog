@@ -20,7 +20,7 @@ class Menu
     public function __toString(): string
     {
         \ob_start(); ?>
-            <p class="menu">
+            <p class="center">
                 <a href="/">Home</a>
                 ∣ <a @onClick="handleAbout">About me</a>
                 <?php if (isset($_ENV['TWITTER'])): ?>
