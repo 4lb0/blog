@@ -11,14 +11,17 @@ class AboutMe
     {
         return <<<EOH
             <h1>About me</h1>
-            <p>
-                Hey, my name is Rodrigo but I prefer to be called <em>Albo</em>.
-                I've beeing programming for the last 15+ years.
+            <p class="center">
+                <img  src="/allboys.png" alt="All Boys logo" />
             </p>
             <p>
-                This is a minimalist blog written with <ExternalLink href="https://github.com/pragmore/fernet">Fernet</ExternalLink>.
-                Yes, another boring markdown blog.
-                You can still see the full code <ExternalLink href="https://github.com/4lb0/blog">here</ExternalLink>.
+                Hey, my name is Rodrigo but I prefer to be called <strong>Albo</strong> (<ExternalLink href="https://en.wikipedia.org/wiki/All_Boys">All Boys</ExternalLink>' nickname).
+                I've beeing programming for the last 15+ years, mostly in PHP and JS.
+            </p>
+            <p>I'm a father of 3 boys and a husband.</p>
+            <p>
+                This is minimalist blog written with <ExternalLink href="https://github.com/pragmore/fernet">Fernet</ExternalLink> (because <ExternalLink href="https://edume.com/blog/what-is-dogfooding">dogfooding</ExternalLink> is good).
+                You can see the <ExternalLink href="https://github.com/4lb0/blog">full code in GitHub</ExternalLink>.
             </p>
 EOH;
     }
