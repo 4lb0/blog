@@ -12,7 +12,7 @@ class AboutMe
         return <<<EOH
             <h1>About me</h1>
             <p class="center">
-                <img  src="/allboys.png" alt="All Boys logo" />
+                <img  src="/img/allboys.png" alt="All Boys logo" />
             </p>
             <p>
                 Hey, my name is Rodrigo but I prefer to be called <strong>Albo</strong> (<ExternalLink href="https://en.wikipedia.org/wiki/All_Boys">All Boys</ExternalLink>' nickname).
