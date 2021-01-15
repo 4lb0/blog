@@ -5,7 +5,8 @@
     "require": {
         "fernet/framework": "^0.1",
         "paragonie/anti-csrf": "^2.3",
-        "erusev/parsedown": "^1.7"
+        "league/commonmark": "^1.5",
+        "spatie/commonmark-highlighter": "^2.1"
     },
     "autoload": {
         "psr-4": {

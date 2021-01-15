@@ -4,16 +4,16 @@ declare(strict_types=1);
 namespace App\Service;
 
 use App\Entity\Post;
-use Parsedown;
+use League\CommonMark\CommonMarkConverter;
 use Fernet\Core\NotFoundException;
 
 class PostService
 {
     private const FILES = __DIR__ . '/../../posts/%s.md';
     private const MORE = '----';
-    private Parsedown $markdown;
+    private CommonMarkConverter $markdown;
 
-    public function __construct(Parsedown $markdown)
+    public function __construct(CommonMarkConverter $markdown)
     {
         $this->markdown = $markdown;
     }
@@ -29,10 +29,10 @@ class PostService
         list($excerpt, $other) = explode(static::MORE, $content);
         $post = new Post;
         $post->title = trim(str_replace('#', '', strtok($content, "\n")));
-        $post->excerpt = $this->markdown->text($excerpt);
+        $post->excerpt = $this->markdown->convertToHtml($excerpt);
         $post->slug = \basename($file, '.md');
         $post->datetime = \filemtime($file);
-        $post->content = $this->markdown->text($excerpt . $other);
+        $post->content = $this->markdown->convertToHtml($excerpt . $other);
         return $post;
     }
 
