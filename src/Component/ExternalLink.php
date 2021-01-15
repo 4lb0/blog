@@ -10,6 +10,6 @@ class ExternalLink
 
     public function __toString()
     {
-        return "<a href=\"$this->href\" target=\"_blank\">$this->childContent 🡵</a>";
+        return "<a href=\"$this->href\" target=\"_blank\">$this->childContent ⬈</a>";
     }
 }

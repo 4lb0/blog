@@ -42,7 +42,7 @@ class PostRow
                 <PostDate timestamp="<?= $this->post->datetime ?>" />
                 <?= $content ?>
                 <?php if ($this->type == 'excerpt'): ?>
-                <p><?= $link?>Read more ⭢</a></p>
+                <p><?= $link?>Read more »</a></p>
                 <?php endif ; ?>
             </div><?php 
         return \ob_get_clean();
