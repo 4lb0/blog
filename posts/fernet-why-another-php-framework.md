@@ -21,37 +21,37 @@ After many years of preaching the separation of the view and the logic in differ
 When I start writing <ExternalLink href="https://github.com/pragmore/fernet">Fernet</ExternalLink> try many alternatives. I first try a pseudocode similar to JSX:
 
 ```html
-    {user && 
-		<div>
-			<SomeComponent active="true" user={user}>
-				Hello <strong>{user.name}</strong>
-			</SomeComponent>
-		</div>}
+{user && 
+	<div>
+		<SomeComponent active="true" user={user}>
+			Hello <strong>{user.name}</strong>
+		</SomeComponent>
+	</div>}
 ```
 
-Then I figured out PHP have a pretty decent templating system already. I want to keep it.
+Parsing all this proved to be really hard. Then I figured out I don't need too much logic because PHP have a pretty decent templating system already. I want to keep it.
 
 ```php
-    <?php use App\Component\SomeComponent; ?>
-    <?php if ($user): ?>
-    <div>
-        <?= SomeComponent::start(['email' => $user->email]) ?>
-            Hello <strong><?= $user->name ?></strong>
-        <?= SomeComponent::end() ?>
-    </div>
-    <?php endif ?>
+<?php use App\Component\SomeComponent; ?>
+<?php if ($user): ?>
+<div>
+	<?= SomeComponent::start(['email' => $user->email]) ?>
+		Hello <strong><?= $user->name ?></strong>
+	<?= SomeComponent::end() ?>
+</div>
+<?php endif ?>
 ```
 
 But it felt too verbose. So I guess I reach middle ground with my last attempt.
 
 ```php
-    <?php if ($user): ?>
-    <div>
-        <SomeComponent email="<?= $user->email ?>">
-            Hello <strong><?= $user->name ?></strong>
-        </SomeComponent>
-    </div>
-    <?php endif ?>
+<?php if ($user): ?>
+<div>
+	<SomeComponent email="<?= $user->email ?>">
+		Hello <strong><?= $user->name ?></strong>
+	</SomeComponent>
+</div>
+<?php endif ?>
 ```
 
 Another important thing I want to do is the event handling. This is React
@@ -73,6 +73,8 @@ function ActionLink() {
 And the same with Fernet is
 
 ```php
+namespace 
+
 use Monolog\Logger;
 
 class ActionLink
