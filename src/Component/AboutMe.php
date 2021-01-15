@@ -16,7 +16,7 @@ class AboutMe
             </p>
             <p>
                 Hey, my name is Rodrigo but I prefer to be called <strong>Albo</strong> (<ExternalLink href="https://en.wikipedia.org/wiki/All_Boys">All Boys</ExternalLink>' nickname).
-                I've beeing programming for the last 15+ years, mostly in PHP and JS.
+                I've beeing getting paid for developing web apps for the last 15+ years, mostly in PHP and JS.
             </p>
             <p>I'm a father of 3 boys and a husband.</p>
             <p>
