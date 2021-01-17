@@ -8,23 +8,25 @@
     "packages": [
         {
             "name": "fernet/framework",
-            "version": "v0.1.2",
+            "version": "v0.1.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/pragmore/fernet-core.git",
-                "reference": "c4e9dac52b54d9f0a1daa5549e3bd4066f7c5d80"
+                "reference": "a302eb5fe795a3c588960550002eef06c8dece2a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/pragmore/fernet-core/zipball/c4e9dac52b54d9f0a1daa5549e3bd4066f7c5d80",
-                "reference": "c4e9dac52b54d9f0a1daa5549e3bd4066f7c5d80",
+                "url": "https://api.github.com/repos/pragmore/fernet-core/zipball/a302eb5fe795a3c588960550002eef06c8dece2a",
+                "reference": "a302eb5fe795a3c588960550002eef06c8dece2a",
                 "shasum": ""
             },
             "require": {
                 "ext-json": "*",
+                "ext-mbstring": "*",
                 "league/container": "^3.3",
                 "monolog/monolog": "^2.2",
                 "nikic/fast-route": "^1.3",
+                "php": ">=7.4",
                 "symfony/http-foundation": "^5.2",
                 "vlucas/phpdotenv": "^5.2"
             },
@@ -49,11 +51,14 @@
                 }
             ],
             "description": "The Fernet Framework",
+            "keywords": [
+                "framework"
+            ],
             "support": {
                 "issues": "https://github.com/pragmore/fernet-core/issues",
-                "source": "https://github.com/pragmore/fernet-core/tree/v0.1.2"
+                "source": "https://github.com/pragmore/fernet-core/tree/v0.1.3"
             },
-            "time": "2021-01-13T01:43:03+00:00"
+            "time": "2021-01-17T03:29:37+00:00"
         },
         {
             "name": "graham-campbell/result-type",
