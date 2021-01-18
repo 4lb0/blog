@@ -3,6 +3,7 @@
 namespace App;
 
 use Fernet\Framework;
+use Fernet\Core\PluginBootstrap;
 use League\CommonMark\Block\Element\FencedCode;
 use League\CommonMark\Block\Element\IndentedCode;
 use League\CommonMark\CommonMarkConverter;
