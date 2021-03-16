@@ -57,6 +57,7 @@ class App
     <?php endif; ?>
     <Menu />
     <FernetClientScript />
+    <A9sTracker />
   </body>
 </html><?php
     return \ob_get_clean();
