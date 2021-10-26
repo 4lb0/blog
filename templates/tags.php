@@ -1,7 +1,7 @@
 <?php $title = "Tag $tag - Blog de Albo"; ?>
 <?php include __DIR__ . '/header.php'; ?>
 <main>
-    <p><a href="/">← Ver todos los artículos</a>
+    <p><a href=".">← Ver todos los artículos</a>
     <h1><?= ucfirst($tag) ?></h1>
     <ul>
 <?php foreach($posts as $post): ?>

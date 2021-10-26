@@ -6,7 +6,7 @@ class DevServer
 {
     const TITLE = 'albo.ar';
     const LOGO = '💡';
-    const TAGS_URL = '/tag';
+    const TAGS_PREFIX = 'tag-';
     const IMAGES_URL = '/images';
 
     public function __invoke()
@@ -17,9 +17,10 @@ class DevServer
             echo $render('home', ['posts' => (new Posts)()]);
         } elseif ($url['dirname'] === static::IMAGES_URL) {
             echo file_get_contents(__DIR__ . '/../public' . $_SERVER['REQUEST_URI']);
-        } elseif ($url['dirname'] === static::TAGS_URL) {
-            $posts = (new Posts)($url['filename']);
-            echo $render('tags', ['posts' => $posts, 'tag' => $url['filename']]);
+        } elseif (substr($url['filename'], 0, strlen(static::TAGS_PREFIX)) === static::TAGS_PREFIX) {
+            $tag = substr($url['filename'], strlen(static::TAGS_PREFIX));
+            $posts = (new Posts)($tag);
+            echo $render('tags', ['posts' => $posts, 'tag' => $tag]);
         } else {
             echo $render->post($url['filename']);
         }

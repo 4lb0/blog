@@ -13,7 +13,7 @@ class Posts
             $markdown = (new Markdown())($content);
             $markdown['file'] = basename($markdownFile, '.md');
             if (!$tag || in_array($tag, $markdown['tags'])) {
-                $markdown['url'] = '/' . $markdown['file'] . '.html';
+                $markdown['url'] = $markdown['file'] . '.html';
                 $posts[$markdown['date']] = $markdown;
             }
         }

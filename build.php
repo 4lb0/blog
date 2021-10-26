@@ -29,5 +29,5 @@ foreach ($posts as $post) {
     write($post['file'], $post['template'], $post);
 }
 foreach ($tags as $tag  => $posts) {
-    write("tag/$tag", 'tags', ['posts' => $posts, 'tag' => $tag]);
+    write("tag-$tag", 'tags', ['posts' => $posts, 'tag' => $tag]);
 }
