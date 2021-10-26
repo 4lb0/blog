@@ -1,0 +1,11 @@
+{
+    "autoload": {
+        "psr-4": {
+            "Blog\\": "src"
+        }
+    },
+    "require": {
+        "league/commonmark": "^2.0",
+        "symfony/yaml": "^5.3"
+    }
+}
