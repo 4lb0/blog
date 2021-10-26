@@ -1,0 +1,14 @@
+name: Build static site
+on: [push]
+jobs:
+  Build static site:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Setup php 
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.0'
+      - name: Check out repository code
+        uses: actions/checkout@v2
+      - run: composer install
+      - run: php build.php
