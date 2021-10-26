@@ -9,6 +9,7 @@
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Literata&display=swap');
     body { font-family: 'Literata', serif }
+    article { margin-bottom: 4em }
   </style>
 </head>
 <body>
