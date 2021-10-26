@@ -1,7 +1,7 @@
 <?php include __DIR__ . '/header.php'; ?>
 <main>
     <p class="text-center">
-        <img src="images/profile.png" alt="" width="50" />
+        <img alt="Photo of Albo" src="profile.webp" width="100" height="100" />
     </p>
     <h1 class="text-center">
         <?= \Blog\DevServer::LOGO ?> <?= \Blog\DevServer::TITLE ?>
