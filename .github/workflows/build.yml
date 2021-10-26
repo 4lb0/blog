@@ -1,7 +1,7 @@
 name: Build static site
 on: [push]
 jobs:
-  Build static site:
+  Build-static-site:
     runs-on: ubuntu-latest
     steps:
       - name: Setup php 
