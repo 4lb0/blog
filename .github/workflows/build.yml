@@ -11,4 +11,5 @@ jobs:
       - name: Check out repository code
         uses: actions/checkout@v2
       - run: composer install
+      - run: mkdir -p public/test
       - run: php build.php
