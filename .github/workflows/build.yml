@@ -10,6 +10,8 @@ jobs:
           php-version: '8.0'
       - name: Check out repository code
         uses: actions/checkout@v2
+        with:
+          fetch-depth: '0'
       - run: composer install
       - run: mkdir -p public/tag
       - run: php build.php
