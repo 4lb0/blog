@@ -8,6 +8,8 @@ jobs:
         uses: shivammathur/setup-php@v2
         with:
           php-version: '8.0'
+      - name: Set up locale
+        run: sudo locale-gen es_AR.UTF-8
       - name: Check out repository code
         uses: actions/checkout@v2
       - run: composer install
