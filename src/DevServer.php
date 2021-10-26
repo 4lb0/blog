@@ -4,6 +4,7 @@ namespace Blog;
 
 class DevServer 
 {
+    const AUTHOR = 'Albo';
     const TITLE = 'albo.ar';
     const LOGO = '💡';
     const TAGS_PREFIX = 'tag-';
