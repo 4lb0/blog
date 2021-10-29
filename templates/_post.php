@@ -1,4 +1,7 @@
     <p class="mt-2">
+        <?= $description ?>
+    </p>
+    <p>
         Publicado el <?= print_date($date) ?>.
     </p>
     <p>
