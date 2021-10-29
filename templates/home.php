@@ -7,7 +7,7 @@
         <?= getenv('BLOG_LOGO') ?? BLOG_DEFAULT_LOGO ?> <?= getenv('BLOG_TITLE') ?>
     </h1>
 <?php foreach($posts as $post): ?>
-    <h3><a href="<?= $post['url'] ?>"><?= $post['title'] ?></a></h3>
+    <h2><a href="<?= $post['url'] ?>"><?= $post['title'] ?></a></h3>
     <?php extract($post); ?>
     <?php include __DIR__ . '/_post.php'; ?>
 <?php endforeach; ?>

@@ -1,5 +1,5 @@
-    <p class="text-center mt-2 mute">
-        Publicado por <a href="."><?= $author ?? getenv('BLOG_AUTHOR') ?></a> el <?= strftime('%A %e de %B del %G', $date) ?>.
+    <p class="mt-2">
+        Publicado por <a href="."><?= $author ?? getenv('BLOG_AUTHOR') ?></a> el <?= print_date($date) ?>.
         <?php if (count($tags)): ?>
             Tags:
             <?php foreach ($tags as $i => $tag): ?> 

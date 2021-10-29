@@ -22,6 +22,15 @@ class Markdown
         ],    
     ];
 
+    private function getDefaultAttributes(): array 
+    {
+        return [
+            'author' => getenv('BLOG_AUTHOR'),
+            'last_update' => null,
+        ];
+
+    }
+
     public function __invoke($content)
     {
         $environment = new Environment(static::CONFIG);
@@ -30,7 +39,7 @@ class Markdown
         $environment->addExtension(new ExternalLinkExtension());
         $converter = new MarkdownConverter($environment);
         $markdown = $converter->convertToHtml($content);
-        $attributes = $markdown->getFrontMatter();
+        $attributes = $markdown->getFrontMatter() + $this->getDefaultAttributes();
         $attributes['post'] = (string) $markdown;
         return $attributes;
     }

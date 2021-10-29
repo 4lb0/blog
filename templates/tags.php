@@ -4,7 +4,7 @@
     <p><a href=".">← Ver todos los artículos</a>
     <h1 class="text-center"><?= ucwords($tag, ' -') ?></h1>
 <?php foreach($posts as $post): ?>
-        <h3><a href="<?= $post['url'] ?>"><?= $post['title'] ?></a></h3>
+        <h2><a href="<?= $post['url'] ?>"><?= $post['title'] ?></a></h3>
         <?php extract($post); ?>
         <?php include __DIR__ . '/_post.php'; ?>
 <?php endforeach; ?>

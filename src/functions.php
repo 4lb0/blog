@@ -15,3 +15,8 @@ function write($name, $template, $vars)
     echo "Writing $name from template $template\n";
     file_put_contents("$path/$name.html", $content);
 }
+
+function print_date($date): string
+{
+    return strftime('%A %e de %B del %G', $date);
+}
