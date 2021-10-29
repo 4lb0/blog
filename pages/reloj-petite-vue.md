@@ -7,6 +7,7 @@ tags:
  - petite-vue
 date: 2021-10-26
 template: post
+description: Un ejemplo muy corto de Petite Vue que sirve para mostrar la hora en una pestaña del navegador.
 
 ---
 

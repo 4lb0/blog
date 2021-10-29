@@ -6,6 +6,7 @@ tags:
  - no-paramos-de-hablar
 date: 2021-08-20
 template: post
+description: Primer episodio de No paramos de hablar, un podcast para los que aprenden a programar.
 
 ---
 

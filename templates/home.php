@@ -1,3 +1,4 @@
+<?php $description = "Blog de Albo, artículos principalmente de desarrollo de software, programación, tecnología, devops y tal vez hasta UX"; ?>
 <?php include 'header.php'; ?>
 <main>
     <p class="text-center">
