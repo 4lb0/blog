@@ -1,4 +1,4 @@
-<?php include __DIR__ . '/header.php'; ?>
+<?php include 'header.php'; ?>
 <main>
     <p><a href=".">← Ver todos los artículos</a>
     <h1 class="text-center"><a href="<?= $file ?>"><?= $title ?></a></h1>
@@ -20,4 +20,4 @@
     <?= $post ?>
     </article>
   </main>
-<?php include __DIR__ . '/footer.php'; ?>
+<?php include 'footer.php'; ?>

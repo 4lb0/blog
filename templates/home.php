@@ -1,4 +1,4 @@
-<?php include __DIR__ . '/header.php'; ?>
+<?php include 'header.php'; ?>
 <main>
     <p class="text-center">
         <img alt="Foto de Albo" src="profile.webp" width="100" height="100" />
@@ -9,7 +9,7 @@
 <?php foreach($posts as $post): ?>
     <h2><a href="<?= $post['url'] ?>"><?= $post['title'] ?></a></h3>
     <?php extract($post); ?>
-    <?php include __DIR__ . '/_post.php'; ?>
+    <?php include '_post.php'; ?>
 <?php endforeach; ?>
 </main>
-<?php include __DIR__ . '/footer.php'; ?>
+<?php include 'footer.php'; ?>
