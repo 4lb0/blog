@@ -18,7 +18,7 @@ if ($url['filename'] === '') {
     $post = Posts::get($url['filename']);
     echo render($post['template'], $post);
 } elseif (file_exists($staticFile) && is_file($staticFile)) {
-    echo file_get_contents($staticFile);
+    return false;
 } else {
     header('HTTP/1.0 404 Not Found');
     echo '<html><body>404 Not Found</body></html>';
