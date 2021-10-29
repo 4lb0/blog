@@ -4,20 +4,48 @@ namespace Blog;
 
 class Posts
 {
-    public function __invoke(?string $tag = null)
+    const PATH = __DIR__ . '/../pages/%s.md';
+
+    static public function list(): array
+    {
+        return static::_list('');
+    }
+
+    static public function listByTag(string $tag): array
+    {
+        return static::_list($tag);
+    }
+
+    static public function get(string $file): array
+    {
+        return static::_get(sprintf(static::PATH, $file));
+    }
+
+    static private function _get(string $file): array
+    {
+        $content = file_get_contents($file);
+        $markdown = (new Markdown())($content);
+        $markdown['file'] = basename($file, '.md');
+        $markdown['url'] = $markdown['file'] . '.html';
+        return $markdown;
+    }
+
+    static private function _list(string $tag): array
     {
         $posts = [];
-        $files = glob(__DIR__ . "/../pages/*.md");
+        $files = glob(sprintf(static::PATH, '*'));
         foreach ($files as $markdownFile) {
-            $content = file_get_contents($markdownFile);
-            $markdown = (new Markdown())($content);
-            $markdown['file'] = basename($markdownFile, '.md');
+            $markdown = static::_get($markdownFile);
             if (!$tag || in_array($tag, $markdown['tags'])) {
-                $markdown['url'] = $markdown['file'] . '.html';
                 $posts[$markdown['date']] = $markdown;
             }
         }
         krsort($posts);
         return $posts;
+    }
+
+    static public function exists(string $post): bool
+    {
+        return file_exists(sprintf(static::PATH, $post));
     }
 }

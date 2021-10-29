@@ -6,6 +6,7 @@ tags:
  - lorem
 date: 2021-10-18
 template: post
+author: Juan
 
 ---
 

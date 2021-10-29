@@ -2,7 +2,11 @@
     "autoload": {
         "psr-4": {
             "Blog\\": "src"
-        }
+        },
+        "files": [
+            "src/config.php",
+            "src/functions.php"
+        ]
     },
     "require": {
         "league/commonmark": "^2.0",
