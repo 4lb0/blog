@@ -1,5 +1,7 @@
     <p class="mt-2">
         Publicado el <?= print_date($date) ?>.
+    </p>
+    <p>
         <?php if (count($tags)): ?>
             Tags:
             <?php foreach ($tags as $i => $tag): ?> 

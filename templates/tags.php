@@ -2,7 +2,7 @@
 <?php include 'header.php'; ?>
 <main>
     <p><a href=".">← Ver todos los artículos</a>
-    <h1 class="text-center"><?= ucwords($tag, ' -') ?></h1>
+    <h1 class="text-center"><?= ucwords(str_replace('-', ' ', $tag), ' ') ?></h1>
 <?php foreach($posts as $post): ?>
         <h2><a href="<?= $post['url'] ?>"><?= $post['title'] ?></a></h3>
         <?php extract($post); ?>
