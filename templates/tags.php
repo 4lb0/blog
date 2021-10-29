@@ -1,4 +1,4 @@
-<?php $title = "Tag $tag - Blog de Albo"; ?>
+<?php $title = "Tag $tag"; ?>
 <?php include __DIR__ . '/header.php'; ?>
 <main>
     <p><a href=".">← Ver todos los artículos</a>
