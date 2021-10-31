@@ -7,7 +7,7 @@
 <?php if(isset($description)): ?>
   <meta name="description" content="<?= $description ?>">
 <?php endif; ?>
-  <link rel="icon" href="data:image/svg+xml,&lt;svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22&gt;&lt;text y=%22.9em%22 font-size=%2290%22&gt;<?= getenv('BLOG_LOGO') ?: BLOG_DEFAULT_LOGO ?>&lt;/text&gt;&lt;/svg&gt;">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20100%20100%22%3E%3Ctext%20y=%22.9em%22%20font-size=%2290%22%3E<?= getenv('BLOG_LOGO') ?: BLOG_DEFAULT_LOGO ?>%3C/text%3E%3C/svg%3E">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/4lb0/blouse.css@latest/dist/blouse.css" media="screen" crossorigin="anonymous">
   <link rel="stylesheet" href="/styles.css" media="screen">
 </head>
