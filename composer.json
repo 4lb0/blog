@@ -8,6 +8,9 @@
             "src/functions.php"
         ]
     },
+    "extra": {
+        "phps": "-t public app.php"
+    },
     "require": {
         "league/commonmark": "^2.0",
         "symfony/yaml": "^5.3"
