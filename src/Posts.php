@@ -37,7 +37,7 @@ class Posts
         foreach ($files as $markdownFile) {
             $markdown = static::_get($markdownFile);
             if (!$tag || in_array($tag, $markdown['tags'])) {
-                $posts[$markdown['date']] = $markdown;
+                $posts[$markdown['date'] . $markdown['file']] = $markdown;
             }
         }
         krsort($posts);
