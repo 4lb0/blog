@@ -10,6 +10,8 @@ description: Primer episodio de No paramos de hablar, un podcast para los que ap
 
 ---
 
+<iframe class="youtube-embed" src="https://www.youtube.com/embed/0Ovh45uBgbc" title="Episodio 1 del Podcast No paramos de hablar" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 Con [Flor Castro](https://twitter.com/florencia020504) coincidimos en
 
 1. El lugar de trabajo
@@ -23,4 +25,3 @@ En este primer capítulo nos presentamos y contamos un poco que hacemos (¡y que
 
 Podes [verlo en Youtube](https://www.youtube.com/watch?v=0Ovh45uBgbc) o [escucharlo en Spotify](https://open.spotify.com/episode/6qm2mvW2pD1X7ktl2Nin6p).
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/0Ovh45uBgbc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>

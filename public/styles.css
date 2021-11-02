@@ -9,3 +9,4 @@
 body { font-family: 'Literata', serif }
 main { margin-bottom: 4em }
 article img { display: block; width:100%; max-width:800px; margin: auto; }
+.youtube-embed { display: block; margin: auto; width: 100%; max-width: 560px; height: 315px; }
