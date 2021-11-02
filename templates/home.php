@@ -2,7 +2,7 @@
 <?php include 'header.php'; ?>
 <main>
     <p class="text-center">
-        <img alt="Foto de Albo" src="profile.webp" width="100" height="100" />
+        <img alt="Foto de Albo" src="images/profile.png" width="150" height="150" />
     </p>
     <h1 class="text-center">
         <?= getenv('BLOG_LOGO') ?? BLOG_DEFAULT_LOGO ?> <?= getenv('BLOG_TITLE') ?>
