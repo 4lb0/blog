@@ -15,5 +15,6 @@
       </a>
     </span>
   </footer>
+<?php /* Close the tags that have been opened in header.php */ ?>
 </body>
 </html>
