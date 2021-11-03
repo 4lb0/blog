@@ -10,7 +10,7 @@ description: "Lo que necesitaba era una manera mas fácil de correr LiveReload, 
 
 ---
 
-![Como se ve cuando se ejecuta el script phps](images/phps.png)
+<img src="images/phps.png" alt="Como se ve cuando se ejecuta el script phps" width="800" height="310" />
 
 Desde que estoy programando con Node y React hay varias cosas que extraño cuando vuelvo a PHP. Muchas tienen que ver con el servidor.
 

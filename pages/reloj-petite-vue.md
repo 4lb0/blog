@@ -11,7 +11,7 @@ description: Un ejemplo muy corto de Petite Vue que sirve para mostrar la hora e
 
 ---
 
-![Screenshot de la web del reloj](images/screenshot-time-web.png)
+<img src="images/screenshot-time-web.png" alt="Screenshot de la web del reloj" width="800" height="434" />
 
 Muchas veces cuando estoy en una call con dos pantallas me queda bloqueado el reloj de Ubuntu. Hay muchas páginas que te muestran la hora pero lo que yo quería era que me la mostrara en el title, asi dejaba la pestaña abierta en Firefox y no necesitaba nada mas.
 
