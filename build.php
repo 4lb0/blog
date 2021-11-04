@@ -6,21 +6,28 @@ use Blog\Posts;
 
 setlocale(LC_ALL, 'es_AR.UTF-8');
 
-$posts = Posts::list();
-$tags = [];
+write(
+    'index',
+    'home', [
+        'posts' => Posts::list(), 
+        'date' => get_date_from_list(Posts::list()),
+    ]
+);
 
-write('index', 'home', ['posts' => $posts]);
-
-foreach ($posts as $post) {
-    foreach ($post['tags'] as $tag) {
-        if (!isset($tags[$tag])) {
-            $tags[$tag] = [];
-        }
-        $tags[$tag][] = $post;
-    }
+foreach (Posts::list() as $post) {
     write($post['file'], $post['template'], $post);
 }
 
-foreach ($tags as $tag  => $posts) {
-    write("tag-$tag", 'tags', ['posts' => $posts, 'tag' => $tag]);
+foreach (Posts::tags() as $tag  => $posts) {
+    write(
+        "tag-$tag",
+        'tags',
+        [
+            'posts' => $posts,
+            'tag' => $tag,
+            'date' => get_date_from_list($posts),
+        ]
+    );
 }
+
+sitemap();

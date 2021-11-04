@@ -5,6 +5,7 @@ namespace Blog;
 class Posts
 {
     const PATH = __DIR__ . '/../pages/%s.md';
+    static private $list = [];
 
     static public function list(): array
     {
@@ -32,6 +33,9 @@ class Posts
 
     static private function _list(string $tag): array
     {
+        if (static::$list) {
+            return static::$list;
+        }
         $posts = [];
         $files = glob(sprintf(static::PATH, '*'));
         foreach ($files as $markdownFile) {
@@ -41,11 +45,26 @@ class Posts
             }
         }
         krsort($posts);
+        static::$list = $posts;
         return $posts;
     }
 
     static public function exists(string $post): bool
     {
         return file_exists(sprintf(static::PATH, $post));
+    }
+
+    static public function tags(): array
+    {
+        $tags = [];
+        foreach (static::list() as $post) {
+            foreach ($post['tags'] as $tag) {
+                if (!isset($tags[$tag])) {
+                    $tags[$tag] = [];
+                }
+                $tags[$tag][] = $post;
+            }
+        }
+        return $tags;
     }
 }
