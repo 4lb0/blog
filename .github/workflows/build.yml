@@ -17,6 +17,7 @@ jobs:
         env:
           BLOG_TITLE: ${{ secrets.BLOG_TITLE }}
           BLOG_AUTHOR: ${{ secrets.BLOG_AUTHOR}}
+          BLOG_URL: ${{ secrets.BLOG_URL}}
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
