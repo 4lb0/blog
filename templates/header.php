@@ -11,10 +11,9 @@
   <style>
 <?php echo file_get_contents('https://cdn.jsdelivr.net/npm/blouse.css@1.2/dist/blouse-critical.css') ?>
 main { margin-bottom: 4em }
-article img { display: block; width:100%; max-width:800px; margin: auto; }
-.youtube-embed { display: block; margin: auto; width: 100%; max-width: 560px; height: 315px; }
+article img, .youtube-embemd { display: block; width:100%; max-width:800px; margin: auto; }
+.youtube-embed { max-width: 560px; height: 315px; }
   </style>
   <link rel="preload" href="https://cdn.jsdelivr.net/npm/blouse.css@1.2/dist/blouse-non-critical.css" media="screen" crossorigin="anonymous" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <link rel="preload" href="/styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
 </head>
 <body>
