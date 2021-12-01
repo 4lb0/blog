@@ -1,16 +1,17 @@
 ---
 
-title: Un podcast para los que empiezan el mundo de sistemas
+title: "NPdH Capítulo 1:  Un podcast para los que empiezan el mundo de sistemas"
 tags:
  - podcast
  - no-paramos-de-hablar
 date: 2021-08-20
+last_update: 2021-11-30
 template: post
 description: Primer episodio de No paramos de hablar, un podcast para los que aprenden a programar.
 
 ---
 
-<iframe class="youtube-embed" src="https://www.youtube.com/embed/0Ovh45uBgbc" title="Episodio 1 del Podcast No paramos de hablar" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<img src="images/no-paramos-de-hablar.jpg" alt="Screenshot de la web del reloj" width="613" height="175" />
 
 Con [Flor Castro](https://twitter.com/florencia020504) coincidimos en
 
@@ -19,7 +20,7 @@ Con [Flor Castro](https://twitter.com/florencia020504) coincidimos en
 3. Nos gusta enseñar o acompañar a la gente con poca experiencia
 4. Hablamos mucho. Mucho en serio.
 
-Lo más lógico era armar un [podcast](tag-podcast.html), asi que aca esta **[No paramos de hablar](https://www.youtube.com/channel/UCFKVoPT-WVK0rgFm0Qdy0kg)** un podcast para los que empiezan a programar.
+Lo más lógico era armar un podcast, asi que aca esta **[No paramos de hablar](https://www.youtube.com/channel/UCFKVoPT-WVK0rgFm0Qdy0kg)** un podcast para los que empiezan a programar.
 
 En este primer capítulo nos presentamos y contamos un poco que hacemos (¡y que no!) en nuestro trabajo.
 
