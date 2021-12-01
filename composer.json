@@ -9,7 +9,11 @@
         ]
     },
     "extra": {
-        "phps": "-t public app.php"
+        "phps": {
+          "docroot": "public",
+          "router": "app.php",
+          "extraExtensions": "md"
+        }
     },
     "require": {
         "league/commonmark": "^2.0",
