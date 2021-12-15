@@ -1,4 +1,4 @@
-name: Build static site
+name: Deploy site
 on: [push]
 jobs:
   Build-static-site:
