@@ -16,11 +16,5 @@
     </span>
   </footer>
 <?php /* Close the tags that have been opened in header.php */ ?>
-<!-- Panelbear -->
-<script async src="https://cdn.panelbear.com/analytics.js?site=KrW6DQwwZag"></script>
-<script>
-    window.panelbear = window.panelbear || function() { (window.panelbear.q = window.panelbear.q || []).push(arguments); };
-    panelbear('config', { site: 'KrW6DQwwZag' });
-</script>
 </body>
 </html>
