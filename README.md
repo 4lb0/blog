@@ -3,6 +3,8 @@
 Another static generated blog with Markdown. This time with PHP.
 
 [![Status](https://github.com/4lb0/blog/actions/workflows/build.yml/badge.svg)](https://github.com/4lb0/blog/actions/workflows/build.yml)
+![GitHub top language](https://img.shields.io/github/languages/top/4lb0/blog)
+![License](https://img.shields.io/github/license/4lb0/blog)
 
 To run locally:
 
