@@ -1,8 +1,8 @@
 <?php include 'header.php'; ?>
 <main>
     <p><a href=".">← Ver todos los artículos</a>
-    <h1 class="text-center"><a href="<?= $file ?>"><?= $title ?></a></h1>
-    <p class="text-center mt-2 mute">
+    <h1 class="ctr"><a href="<?= $file ?>"><?= $title ?></a></h1>
+    <p class="ctr sp">
         Publicado por <strong><?= $author ?? getenv('BLOG_AUTHOR') ?></strong> el <?= print_date($date) ?>.
         <?php if (count($tags)): ?>
             Tags:
@@ -12,11 +12,11 @@
         <?php endif; ?>
     </p>
     <?php if (isset($update_date)): ?>
-    <p class="text-center mute">
+    <p class="ctr">
         Última actualización: <?= print_date($update_date) ?>.
     </p>
     <?php endif; ?>
-    <article class="mt-2">
+    <article class="sp">
     <?= $post ?>
     </article>
   </main>

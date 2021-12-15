@@ -4,7 +4,7 @@
 <?php include 'header.php'; ?>
 <main>
     <p><a href=".">← Ver todos los artículos</a>
-    <h1 class="text-center"><?= $tagDescriptive ?></h1>
+    <h1 class="ctr"><?= $tagDescriptive ?></h1>
 <?php foreach($posts as $post): ?>
         <h2><a href="<?= $post['url'] ?>"><?= $post['title'] ?></a></h2>
         <?php extract($post); ?>

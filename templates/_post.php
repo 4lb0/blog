@@ -1,4 +1,4 @@
-    <p class="mt-2">
+    <p class="sp">
         <?= $description ?>
     </p>
     <p>
