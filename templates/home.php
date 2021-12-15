@@ -1,10 +1,10 @@
 <?php $description = "Blog de Albo, artículos principalmente de desarrollo de software, programación, tecnología, devops y tal vez hasta UX"; ?>
 <?php include 'header.php'; ?>
 <main>
-    <p class="text-center">
+    <p class="ctr">
         <img alt="Foto de Albo" src="images/profile.png" width="150" height="150" />
     </p>
-    <h1 class="text-center">
+    <h1 class="ctr">
         <?= getenv('BLOG_LOGO') ?? BLOG_DEFAULT_LOGO ?> <?= getenv('BLOG_TITLE') ?>
     </h1>
 <?php foreach($posts as $post): ?>
