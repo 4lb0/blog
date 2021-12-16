@@ -83,6 +83,6 @@ Por último vamos a ejecutar los siguientes comandos para marcar los conflictos 
 
 ## Listo!
 
-Bueno con esto podemos empezar a trabajar. Aunque no vimos muchas cosas, entre ellos lo mas importante que son las ramas (o *branches*), estamos manejando una Ferrari para ir al kiosco, pero todo se vuelve mas complejo. Una vez que tengamos este flujo internalizado, vamos a poder avanzar con git.
+Bueno con esto podemos empezar a trabajar. Aunque no vimos muchas cosas, entre ellos lo mas importante que son las ramas (o *branches*). Básicamente estamos manejando una Ferrari para ir al kiosco, pero tranquilos ya va a haber tiempo para complicar las cosas aún mas. Una vez que tengan este flujo internalizado y se sientan cómodos con git pueden avanzar.
 
-Si te ha interesado y quieres seguir aprendiendo mas, el mejor recurso para aprender es el libro [Pro Git](https://git-scm.com/book/es/v2) que esta gratis y en español.
+Si te interesó y queres seguir aprendiendo el mejor recurso es el libro [Pro Git](https://git-scm.com/book/es/v2) que esta gratis y en español.
