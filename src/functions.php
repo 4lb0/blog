@@ -7,7 +7,9 @@ function render(string $template, array $vars = [])
     extract($vars);
     ob_start();
     include __DIR__ . "/../templates/$template.php";
-    return ob_get_clean();
+    $html = ob_get_clean();
+    $parser = \WyriHaximus\HtmlCompress\Factory::constructSmallest();
+    return $parser->compress($html);
 }
 
 function write($name, $template, $vars)
