@@ -16,8 +16,9 @@ jobs:
       - run: php build.php
         env:
           BLOG_TITLE: ${{ secrets.BLOG_TITLE }}
-          BLOG_AUTHOR: ${{ secrets.BLOG_AUTHOR}}
-          BLOG_URL: ${{ secrets.BLOG_URL}}
+          BLOG_AUTHOR: ${{ secrets.BLOG_AUTHOR }}
+          BLOG_URL: ${{ secrets.BLOG_URL }}
+          BLOG_LOGO: ${{ secrets.BLOG_LOGO }}
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
