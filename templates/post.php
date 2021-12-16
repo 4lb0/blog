@@ -1,11 +1,16 @@
 <?php include 'header.php'; ?>
 <main>
-    <p><a href=".">← Ver todos los artículos</a>
-    <h1 class="ctr"><a href="<?= $file ?>"><?= $title ?></a></h1>
+    <p>
+        <a href=".">
+        ← 
+        <?= getenv('BLOG_LOGO') ?? BLOG_DEFAULT_LOGO ?> <?= getenv('BLOG_TITLE') ?>
+        </a>
+    </p>
+    <h1><a href=""><?= $title ?></a></h1>
     <p class="ctr sp">
         Publicado por <strong><?= $author ?? getenv('BLOG_AUTHOR') ?></strong> el <?= print_date($date) ?>.
         <?php if (count($tags)): ?>
-            Tags:
+            Etiquetas:
             <?php foreach ($tags as $i => $tag): ?> 
                 <a href="tag-<?= $tag ?>.html"><?= $tag ?></a><?php if($i !== count($tags) - 1): ?>, <?php endif; ?>
             <?php endforeach; ?>.
