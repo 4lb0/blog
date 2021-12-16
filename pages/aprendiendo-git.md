@@ -24,7 +24,7 @@ Este comando inicializa el *repositorio*, que es el lugar donde tengo los archiv
 Una vez que hago mis cambios los tengo que guardar.
 
     git add .
-    git commit -m "Aca va un mensaje descriptivo y breve con los cambios"
+    git commit -m "Resumen de los cambios"
 
 ## ¿Cómo comparto mi proyecto con otros?
 
@@ -41,11 +41,13 @@ Ahora llegó la hora de bajar los cambios que hicieron otras personas.
 
     git pull --rebase
 
-Con esta línea me bajo los cambios. Luego con la siguiente línea los agregamos:
+Con esta línea me traigo los cambios. Luego con la siguiente línea los agregamos:
 
     git push origin main
 
-## ¿Qué hago si a bajar los cambios me dice que hay un conflicto?
+Como el proyecto lo configuramos con *https* en vez de *ssh* nos va a pedir la contraseña cada vez que hagamos push.
+
+## ¿Qué hago si cuando traigo los cambios me dice que hay un conflicto?
 
 Me puede pasar que haya un conflicto, esto es que git detecta que otra persona y yo editamos la misma línea y no sabe cual es la que iría. Un conflicto se ve de la siguiente manera:
 
@@ -81,8 +83,8 @@ Por último vamos a ejecutar los siguientes comandos para marcar los conflictos 
     git add .
     git rebase --continue
 
-## Listo!
+## ¡Listo!
 
-Bueno con esto podemos empezar a trabajar. Aunque no vimos muchas cosas, entre ellos lo mas importante que son las ramas (o *branches*). Básicamente estamos manejando una Ferrari para ir al kiosco, pero tranquilos ya va a haber tiempo para complicar las cosas aún mas. Una vez que tengan este flujo internalizado y se sientan cómodos con git pueden avanzar.
+Bueno con esto podemos empezar a trabajar. Aunque no vimos muchas cosas, entre ellos lo mas importante que son las ramas (*branches*). Por ahora estamos manejando una Ferrari para ir al kiosco, pero tranquilos ya va a haber tiempo para complicar las cosas aún mas. Una vez que tengan este flujo internalizado y se sientan cómodos con git pueden avanzar.
 
-Si te interesó y queres seguir aprendiendo el mejor recurso es el libro [Pro Git](https://git-scm.com/book/es/v2) que esta gratis y en español.
+Si te interesó y queres seguir aprendiendo el mejor recurso es el libro [Pro Git](https://git-scm.com/book/es/v2) que es gratis y en español.
