@@ -1,8 +1,8 @@
 <?php include 'header.php'; ?>
 <main>
-    <p>
+    <p class="ctr">
         <a href=".">
-        <?= getenv('BLOG_LOGO') ?? BLOG_DEFAULT_LOGO ?> <?= getenv('BLOG_TITLE') ?>
+            <?= getenv('BLOG_LOGO') ?? BLOG_DEFAULT_LOGO ?> <?= getenv('BLOG_TITLE') ?>
         </a>
     </p>
     <h1><?= $title ?></h1>
