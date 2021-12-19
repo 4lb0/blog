@@ -2,8 +2,7 @@
 <?php include 'header.php'; ?>
 <main>
     <h1>
-        <a href="."><?= getenv('BLOG_LOGO') ?? BLOG_DEFAULT_LOGO ?> <?= getenv('BLOG_TITLE') ?>
-        </a>
+        <?= getenv('BLOG_LOGO') ?? BLOG_DEFAULT_LOGO ?> <?= getenv('BLOG_TITLE') ?>
     </h1>
     <p class="ctr" style="font-size: 1.3em"><?= $description ?></p>
 <?php foreach($posts as $post): ?>

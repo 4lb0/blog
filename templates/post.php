@@ -2,11 +2,10 @@
 <main>
     <p>
         <a href=".">
-        ← 
         <?= getenv('BLOG_LOGO') ?? BLOG_DEFAULT_LOGO ?> <?= getenv('BLOG_TITLE') ?>
         </a>
     </p>
-    <h1><a href=""><?= $title ?></a></h1>
+    <h1><?= $title ?></h1>
     <p class="ctr sp">
         Publicado por <strong><?= $author ?? getenv('BLOG_AUTHOR') ?></strong> el <?= print_date($date) ?>.
         <?php if (count($tags)): ?>
