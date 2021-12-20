@@ -1,6 +1,6 @@
-<?php $tagDescriptive = ucwords(str_replace('-', ' ', $tag), ' ');  ?>
+<?php $tagDescriptive = "#$tag";  ?>
 <?php $description = "Listado de artículos del Blog de Albo bajo la categoría $tagDescriptive"; ?>
-<?php $title = "Tag $tag"; ?>
+<?php $title = $tagDescriptive; ?>
 <?php include 'header.php'; ?>
 <main>
     <p class="ctr">
@@ -8,7 +8,6 @@
         <a href="."><?= getenv('BLOG_TITLE') ?></a>
     </p>
     <h1><?= $tagDescriptive ?></h1>
-    <p class="ctr lg"><?= $description ?></p>
 <?php foreach($posts as $post): ?>
         <h2><a href="<?= $post['url'] ?>"><?= $post['title'] ?></a></h2>
         <?php extract($post); ?>
