@@ -4,7 +4,6 @@
   <title><?= (isset($title) ? "$title - " : "") . getenv('BLOG_TITLE') ?></title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="google-site-verification" content="nSTdhlwN3bAZlhJyoMRTAZhQBFznThfafyvYnuea8kU" />
 <?php if(isset($description)): ?>
   <meta name="description" content="<?= $description ?>">
 <?php endif; ?>
