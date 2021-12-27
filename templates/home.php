@@ -1,4 +1,6 @@
-<?php $description = "Blog de Albo, artículos principalmente de desarrollo de software, programación, tecnología, devops y tal vez hasta UX"; ?>
+<?php $description = "Blog de Albo, artículos principalmente de desarrollo de software, programación, tecnología, devops y tal vez hasta UX"; 
+$style = '.lg{font-size:1.3em}';
+?>
 <?php include 'header.php'; ?>
 <main>
     <h1>
