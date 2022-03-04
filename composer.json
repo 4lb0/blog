@@ -23,8 +23,9 @@
     "scripts": {
         "post-install-cmd": [
           "@putenv BLOG_AUTHOR=Albo",
-          "@putenv BLOG_TITLE=Programación y albo más",
+          "@putenv BLOG_TITLE=Sin comentarios",
           "@putenv BLOG_URL=https://albo.ar",
+          "@putenv BLOG_LOGO=☕",
           "@php build.php"
         ]
     }
