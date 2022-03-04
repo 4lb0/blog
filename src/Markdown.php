@@ -39,7 +39,9 @@ class Markdown
         $environment->addExtension(new ExternalLinkExtension());
         $converter = new MarkdownConverter($environment);
         $markdown = $converter->convertToHtml($content);
-        $attributes = $markdown->getFrontMatter() + $this->getDefaultAttributes();
+        if ($markdown instanceof RenderedContentWithFrontMatter) {
+            $attributes = $markdown->getFrontMatter() + $this->getDefaultAttributes();
+        }
         $attributes['post'] = (string) $markdown;
         return $attributes;
     }
