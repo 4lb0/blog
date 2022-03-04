@@ -8,10 +8,7 @@ function render(string $template, array $vars = [])
     ob_start();
     include __DIR__ . "/../templates/$template.php";
     $html = ob_get_clean();
-    $htmlMin = new \voku\helper\HtmlMin();
-    $htmlMin->doRemoveSpacesBetweenTags();
-    $htmlMin->doRemoveComments(false);
-    $parser = \WyriHaximus\HtmlCompress\Factory::constructSmallest()->withHtmlMin($htmlMin);
+    $parser = \WyriHaximus\HtmlCompress\Factory::constructSmallest();
     return $parser->compress($html);
 }
 
