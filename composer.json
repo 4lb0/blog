@@ -19,5 +19,13 @@
         "league/commonmark": "^2.0",
         "symfony/yaml": "^5.3",
         "wyrihaximus/html-compress": "^4.1"
+    },
+    "scripts": {
+        "post-install-cmd": [
+          "@putenv BLOG_AUTHOR=Albo",
+          "@putenv BLOG_TITLE=Programación y albo más",
+          "@putenv BLOG_URL=https://albo.ar",
+          "@php build.php"
+        ]
     }
 }
