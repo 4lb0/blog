@@ -41,7 +41,6 @@ PetiteVue.createApp(app).mount()
 
 El HTML queda asi
 
-<!--email_off-->
 ```
 <main v-cloak @mounted="setUp()">
   <h1 class="center">{{ time }}</h1>
@@ -49,6 +48,5 @@ El HTML queda asi
 <script src="https://unpkg.com/petite-vue@0.3.0/dist/petite-vue.iife.js"></script>
 <script src="app.js"></script>
 ```
-<!--/email_off-->
 
 Se puede ver funcionando en [time.albo.ar](https://time.albo.ar) y el código entero lo podes ver en mi GitHub [4lb0/time](https://github.com/4lb0/time).
