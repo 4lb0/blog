@@ -34,8 +34,10 @@ En el caso que el repositorio ya este creado y este compartido en alguna platafo
     git fetch --all
     git checkout main
 
+<!--email_off-->
 En la URL va la ruta de la plataforma. Idealmente se usa la de ssh (git@github.com:mi-usuario/un-repo.git) pero como es el primer tutorial lo dejamos pasar.
 El nombre de la rama (o *branch*) principal es **main**, aunque históricamente se usó **master**.
+<!--/email_off-->
 
 Ahora llegó la hora de bajar los cambios que hicieron otras personas.
 
