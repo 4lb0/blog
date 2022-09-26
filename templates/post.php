@@ -1,8 +1,4 @@
-<?php 
-
-$style = 'pre{background:#eee;padding:1em;overflow:auto}img{display:block;margin:auto;width:90%}';
-
-include 'header.php'; ?>
+<?php include 'header.php'; ?>
 <main>
     <p class="ctr">
         <?= getenv('BLOG_LOGO') ?? BLOG_DEFAULT_LOGO ?>
