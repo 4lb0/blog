@@ -4,7 +4,7 @@ $style = '.lg{font-size:1.3em}';
 <?php include 'header.php'; ?>
 <main>
     <h1>
-        <?= getenv('BLOG_LOGO') ?? BLOG_DEFAULT_LOGO ?> <?= getenv('BLOG_TITLE') ?>
+        <?= getenv('BLOG_TITLE') ?>
     </h1>
     <p class="ctr lg"><?= $description ?></p>
 <?php foreach($posts as $post): ?>
