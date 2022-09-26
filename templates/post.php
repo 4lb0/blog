@@ -1,6 +1,6 @@
 <?php 
 
-$style = 'pre{background:#DDD;border-radius:8pt;overflow:auto}article img{display:block;width:100%;max-width:800px; margin:auto}';
+$style = 'pre{background:#eee;padding:1em;overflow:auto}img{display:block;margin:auto;width:90%}';
 
 include 'header.php'; ?>
 <main>
