@@ -1,6 +1,6 @@
 <?php include 'header.php'; ?>
 <main>
-    <p class="ctr">
+    <p>
         <a href=".">
             <?= getenv('BLOG_TITLE') ?>
         </a>
@@ -14,10 +14,10 @@
             <?php endforeach; ?>
         <?php endif; ?>
     </p>
-    <article class="sp">
+    <article>
     <?= $post ?>
     </article>
-    <p class="sp">
+    <p>
         <em>
             Publicado por <strong><?= $author ?? getenv('BLOG_AUTHOR') ?></strong> el <?= print_date($date) ?>.
             <?php if (isset($update_date)): ?>

@@ -3,7 +3,7 @@
 <?php $title = $tagDescriptive; ?>
 <?php include 'header.php'; ?>
 <main>
-    <p class="ctr">
+    <p>
         <?= getenv('BLOG_LOGO') ?? BLOG_DEFAULT_LOGO ?>
         <a href="."><?= getenv('BLOG_TITLE') ?></a>
     </p>
