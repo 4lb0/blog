@@ -5,7 +5,6 @@
 <?php include 'header.php'; ?>
 <main>
     <p>
-        <?= getenv('BLOG_LOGO') ?? BLOG_DEFAULT_LOGO ?>
         <a href="."><?= getenv('BLOG_TITLE') ?></a>
     </p>
     <h1><?= $tagDescriptive ?></h1>
