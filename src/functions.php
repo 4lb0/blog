@@ -8,6 +8,7 @@ function render(string $template, array $vars = [])
     ob_start();
     include __DIR__ . "/../templates/$template.php";
     $html = ob_get_clean();
+    $html = replace_images($html);
     $parser = \WyriHaximus\HtmlCompress\Factory::constructSmallest();
     return $parser->compress($html);
 }
@@ -59,4 +60,30 @@ function get_date_from_list(array $posts): int
         }
     }
     return $last;
+}
+
+function replace_images($html) {
+    if (preg_match_all('/<img src="([^"]+)"/', $html, $matches)) {
+        foreach ($matches[1] as $match) {
+            $file = dirname(__DIR__) . '/public/' . $match;
+            $image = file_get_contents($file);
+            $type = get_image_type($match);
+            $encodedImage = base64_encode($image);
+            $html = str_replace($match, "data:$type;base64,$encodedImage", $html);
+        }
+    }
+    return $html;
+}
+
+function get_image_type($image) {
+    $extension = pathinfo($image, PATHINFO_EXTENSION);
+    switch ($extension) {
+    case 'svg':
+        return 'image/svg+xml';
+    case 'jpg':
+        $extension = 'jpeg';
+        break;
+
+    }
+    return "image/$extension";
 }
