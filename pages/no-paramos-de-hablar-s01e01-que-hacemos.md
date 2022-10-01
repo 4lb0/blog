@@ -11,7 +11,7 @@ description: Primer episodio de No paramos de hablar, un podcast para los que ap
 
 ---
 
-<img src="images/no-paramos-de-hablar.jpg" alt="Screenshot de la web del reloj" width="613" height="175" />
+<img src="no-paramos-de-hablar.jpg" alt="Screenshot de la web del reloj" width="613" height="175" />
 
 Con [Flor Castro](https://twitter.com/florencia020504) coincidimos en
 
