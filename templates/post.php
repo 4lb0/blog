@@ -1,7 +1,7 @@
 <?php include 'header.php'; ?>
 <main>
     <p>
-        <a href=".">
+        <a href="." aria-label="Ver todos los artículos">
             <?= getenv('BLOG_TITLE') ?>
         </a>
     </p>
