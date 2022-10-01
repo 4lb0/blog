@@ -2,8 +2,8 @@
 
 title: "NPdH Capítulo 1:  Un podcast para los que empiezan el mundo de sistemas"
 tags:
- - podcast
- - no-paramos-de-hablar
+ - No paramos de hablar
+ - Podcast
 date: 2021-08-20
 last_update: 2021-11-30
 template: post

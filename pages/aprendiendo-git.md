@@ -2,10 +2,10 @@
 
 title: Aprendiendo lo básico de git
 tags:
- - git
- - aprender
- - programacion 
- - tips
+ - Tips para Juniors 
+ - Tips
+ - Git
+ - Programacion 
 date: 2021-12-16
 template: post
 description: Git es una aplicación para el manejo del control de versiones. Aprendamos lo básico. 

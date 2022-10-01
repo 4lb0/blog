@@ -40,7 +40,8 @@ class Posts
         $files = glob(sprintf(static::PATH, '*'));
         foreach ($files as $markdownFile) {
             $markdown = static::_get($markdownFile);
-            if (!$tag || in_array($tag, $markdown['tags'])) {
+            $tags = array_map('link_tag', $markdown['tags']); 
+            if (!$tag || in_array($tag, $tags)) {
                 $posts[$markdown['date'] . $markdown['file']] = $markdown;
             }
         }
@@ -59,12 +60,14 @@ class Posts
         $tags = [];
         foreach (static::list() as $post) {
             foreach ($post['tags'] as $tag) {
+                $tag = link_tag($tag);
                 if (!isset($tags[$tag])) {
                     $tags[$tag] = [];
                 }
                 $tags[$tag][] = $post;
             }
         }
+        var_dump($tags);
         return $tags;
     }
 }

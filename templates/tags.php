@@ -1,4 +1,5 @@
-<?php $tagDescriptive = "#$tag";  ?>
+<?php $firstPost = reset($posts); ?>
+<?php $tagDescriptive = $firstPost['tags'][0];  ?>
 <?php $description = "Listado de artículos del Blog de Albo bajo la categoría $tagDescriptive"; ?>
 <?php $title = $tagDescriptive; ?>
 <?php include 'header.php'; ?>

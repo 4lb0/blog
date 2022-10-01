@@ -2,8 +2,8 @@
 
 title: Mejorando el servidor interno de PHP 
 tags:
- - php 
- - tools
+ - PHP
+ - Tools
 date: 2021-11-02
 template: post
 description: "Lo que necesitaba era una manera mas fácil de correr LiveReload, varios servidores al mismo tiempo y tener a mano la url del servidor asi que aca esta: phps, el reemplazo a php -S."

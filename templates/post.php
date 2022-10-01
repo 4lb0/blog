@@ -8,20 +8,16 @@
     <h1><?= $title ?></h1>
     <p>
         <?= $description ?>
-        <?php if (count($tags)): ?>
-            <?php foreach ($tags as $i => $tag): ?> 
-                <a href="tag-<?= $tag ?>.html">#<?= $tag ?></a>
-            <?php endforeach; ?>
-        <?php endif; ?>
     </p>
     <article>
     <?= $post ?>
     </article>
     <p>
         <em>
-            Publicado por <strong><?= $author ?? getenv('BLOG_AUTHOR') ?></strong> el <?= print_date($date) ?>.
+            Publicado por <strong><?= $author ?? getenv('BLOG_AUTHOR') ?></strong> el <?= print_date($date) ?>
+            en <a href="tag-<?= link_tag($tags[0]) ?>.html"><?= $tags[0] ?></a>.
             <?php if (isset($update_date)): ?>
-                Última actualización: <?= print_date($update_date) ?>.
+                Actualizado el <?= print_date($update_date) ?>.
             <?php endif; ?>
         </em>
     </p>

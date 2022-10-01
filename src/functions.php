@@ -87,3 +87,7 @@ function get_image_type($image) {
     }
     return "image/$extension";
 }
+
+function link_tag($tag) {
+    return str_replace(' ', '-', strtolower($tag));
+}

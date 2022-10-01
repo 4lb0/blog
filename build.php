@@ -19,8 +19,9 @@ foreach (Posts::list() as $post) {
 }
 
 foreach (Posts::tags() as $tag  => $posts) {
+    $url = link_tag($tag);
     write(
-        "tag-$tag",
+        "tag-$url",
         'tags',
         [
             'posts' => $posts,

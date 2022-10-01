@@ -2,9 +2,9 @@
 
 title: Una micro app para mandar texto de la compu al celu
 tags:
- - micro-app
- - proyectos
- - mvp
+ - Micro Aplicación
+ - Proyectos
+ - MVP 
 date: 2021-10-20
 template: post
 description: Un generador de QR para poder copiar texto desde la compu al celu sin bajar ninguna app. 
