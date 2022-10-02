@@ -1,16 +1,11 @@
 <?php include 'header.php'; ?>
 <main>
-    <p>
-        <a href="." aria-label="Ver todos los artículos">
-            <?= $_ENV['BLOG_TITLE'] ?>
-        </a>
-    </p>
     <h1><?= $title ?></h1>
-    <p>
-        <?= $description ?>
-    </p>
     <article>
-    <?= $post ?>
+        <p>
+            <?= $description ?>
+        </p>
+        <?= $post ?>
     </article>
     <p>
         <em>

@@ -4,12 +4,12 @@
 <?php $title = $tagDescriptive; ?>
 <?php include 'header.php'; ?>
 <main>
-    <p>
+    <h1>
         <a href="."><?= $_ENV['BLOG_TITLE'] ?></a>
-    </p>
-    <h1><?= $tagDescriptive ?></h1>
+    </h1>
+    <h2>Posts archivados en <em><?= $tagDescriptive ?></em></h2>
 <?php foreach($posts as $post): ?>
-        <h2><a href="<?= $post['url'] ?>"><?= $post['title'] ?></a></h2>
+        <h3><a href="<?= $post['url'] ?>"><?= $post['title'] ?></a></h3>
         <?php extract($post); ?>
         <?php include '_post.php'; ?>
 <?php endforeach; ?>
