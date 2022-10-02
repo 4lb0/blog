@@ -2,7 +2,7 @@
 <?php include 'header.php'; ?>
 <main>
     <h1>
-        <?= getenv('BLOG_TITLE') ?>
+        <?= $_ENV['BLOG_TITLE'] ?>
     </h1>
     <p><?= $description ?></p>
 <?php foreach($posts as $post): ?>

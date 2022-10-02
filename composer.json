@@ -4,7 +4,6 @@
             "Blog\\": "src"
         },
         "files": [
-            "src/config.php",
             "src/functions.php"
         ]
     },
@@ -18,14 +17,11 @@
     "require": {
         "league/commonmark": "^2.0",
         "symfony/yaml": "^5.3",
-        "wyrihaximus/html-compress": "^4.1"
+        "wyrihaximus/html-compress": "^4.1",
+        "vlucas/phpdotenv": "^5.4"
     },
     "scripts": {
         "post-install-cmd": [
-          "@putenv BLOG_AUTHOR=Albo",
-          "@putenv BLOG_TITLE=Sin comentarios",
-          "@putenv BLOG_URL=https://albo.ar",
-          "@putenv BLOG_LOGO=☕",
           "@php build.php"
         ]
     }

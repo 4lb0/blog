@@ -1,8 +1,6 @@
 <?php
 
-require __DIR__ . '/vendor/autoload.php';
-
-setlocale(LC_ALL, 'es_AR.UTF-8');
+require_once 'common.php';
 
 use Blog\Posts;
 
