@@ -20,4 +20,4 @@ También sufro del [síndrome de la hoja en blanco](https://interactius.com/el-s
 
 Lo único que me queda es tratar al blog como si fuera una app, ¿qué otra cosa podría aplicar? De momento [**release early**, release often (publicar temprano, publicar seguido)](https://es.wikipedia.org/wiki/Release_early,_release_often).
 
-*La foto de [Jeremy Bezanger](https://unsplash.com/@unarchive?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) publicada en [Unsplash](https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)*
+*La foto es de [Jeremy Bezanger](https://unsplash.com/@unarchive?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) publicada en [Unsplash](https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)*
