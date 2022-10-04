@@ -40,6 +40,9 @@ class Posts
         $files = glob(sprintf(static::PATH, '*'));
         foreach ($files as $markdownFile) {
             $markdown = static::_get($markdownFile);
+            if ($markdown['wip']) {
+                continue;
+            }
             $tags = array_map('link_tag', $markdown['tags']); 
             if (!$tag || in_array($tag, $tags)) {
                 $posts[$markdown['date'] . $markdown['file']] = $markdown;
