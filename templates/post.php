@@ -1,5 +1,8 @@
 <?php include 'header.php'; ?>
 <main>
+    <p>
+        <a href="."><?= $_ENV['BLOG_TITLE'] ?></a>
+    </p>
     <h1><?= $title ?></h1>
     <article>
         <p>
