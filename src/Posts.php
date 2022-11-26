@@ -40,7 +40,7 @@ class Posts
         $files = glob(sprintf(static::PATH, '*'));
         foreach ($files as $markdownFile) {
             $markdown = static::_get($markdownFile);
-            if ($markdown['wip']) {
+            if ($markdown['wip'] ?? false) {
                 continue;
             }
             $tags = array_map('link_tag', $markdown['tags']); 
