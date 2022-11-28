@@ -32,3 +32,4 @@ foreach (Posts::tags() as $tag  => $posts) {
 }
 
 sitemap();
+robotsTxt();

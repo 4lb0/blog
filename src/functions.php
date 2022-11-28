@@ -50,6 +50,15 @@ XML);
     file_put_contents(__DIR__ . '/../public/sitemap.xml', $xml->asXML());
 }
 
+function robotsTxt()
+{
+    $url = BLOG_URL;
+    file_put_contents(
+        __DIR__ . '/../public/robots.txt',
+        "User-agent: *\nAllow: /\nSitemap: $url/sitemap.xml"
+    );
+}
+
 function get_date_from_list(array $posts): int 
 {
     $last = 0;
