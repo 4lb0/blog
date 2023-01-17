@@ -1,11 +1,10 @@
   <footer>
     <nav>
         <ul>
-            <li><?= $_ENV['BLOG_TITLE'] ?></li>
-            <li><a href=".">Ver todos los artículos</a>
-            <li><a href="https://twitter.com/4lb0" rel="noopener">Twitter</a>
-            <li><a href="https://github.com/4lb0" rel="noopener">Github</a>
-            <li><a href="https://www.linkedin.com/in/rodrigoarce/" rel="noopener">LinkedIn</a>
+            <li><a href="."><?= $_ENV['BLOG_TITLE'] ?></a></li>
+            <li><a href="//twitter.com/4lb0">Twitter</a>
+            <li><a href="//github.com/4lb0">Github</a>
+            <li><a href="//www.linkedin.com/in/rodrigoarce/">LinkedIn</a>
             <li><a href="#" aria-label="Volver a leer"><span aria-hidden="true">↑ </span>Arriba</a></li>
         </ul>
     </nav>
