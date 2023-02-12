@@ -6,6 +6,12 @@
     <h1><?= $title ?></h1>
     <article>
         <p>
+            <em>
+                Tiempo estimado de lectura:
+                <?= $readingTime ?> minuto<?php if ($readingTime != 1): ?>s<?php endif; ?>.
+            </em>
+        </p>
+        <p>
             <?= $description ?>
         </p>
         <?= $post ?>

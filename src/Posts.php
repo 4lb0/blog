@@ -5,6 +5,7 @@ namespace Blog;
 class Posts
 {
     const PATH = __DIR__ . '/../pages/%s.md';
+    const AVERAGE_SPEED_READING = 180;
     static private $list = [];
 
     static public function list(): array
@@ -28,6 +29,7 @@ class Posts
         $markdown = (new Markdown())($content);
         $markdown['file'] = basename($file, '.md');
         $markdown['url'] = $markdown['file'] . '.html';
+        $markdown['readingTime'] = ceil(str_word_count($content) / static::AVERAGE_SPEED_READING);
         return $markdown;
     }
 
