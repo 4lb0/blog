@@ -8,7 +8,7 @@ Another static generated blog with Markdown. This time with PHP.
 
 To run locally:
 
-```
+```bash
 BLOG_AUTHOR=Author \
 BLOG_TITLE=Title \
 BLOG_LOGO="😀" \
@@ -17,6 +17,6 @@ php -S 127.0.0.1:8000 -t public app.php
 
 To generate the static content:
 
-```
+```bash
 php build.php
 ```
