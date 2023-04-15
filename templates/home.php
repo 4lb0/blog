@@ -1,4 +1,4 @@
-<?php $description = "Blog de programación, tecnología, devops y tal vez hasta UX"; ?>
+<?php $description = "Hace 18 años que me pagan por resolver problemas con código. Socio de All Boys. Tengo muchos hijos, entre ellos <a href=//pragmore.com>Pragmore</a>. Decime Albo."; ?>
 <?php include 'header.php'; ?>
 <main>
     <h1>
