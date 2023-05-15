@@ -64,15 +64,13 @@ class Posts
     {
         $tags = [];
         foreach (static::list() as $post) {
-            foreach ($post['tags'] as $tag) {
-                $tag = link_tag($tag);
-                if (!isset($tags[$tag])) {
-                    $tags[$tag] = [];
-                }
-                $tags[$tag][] = $post;
+            $tag = $post['tags'][0];
+            $tag = link_tag($tag);
+            if (!isset($tags[$tag])) {
+                $tags[$tag] = [];
             }
+            $tags[$tag][] = $post;
         }
-        var_dump($tags);
         return $tags;
     }
 }
