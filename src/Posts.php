@@ -42,7 +42,7 @@ class Posts
         $files = glob(sprintf(static::PATH, '*'));
         foreach ($files as $markdownFile) {
             $markdown = static::_get($markdownFile);
-            if ($markdown['wip'] ?? false) {
+            if ($markdown['date'] > time()) {
                 continue;
             }
             $tags = array_map('link_tag', $markdown['tags']); 
