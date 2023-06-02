@@ -4,8 +4,6 @@ require_once 'common.php';
 
 use Blog\Posts;
 
-setlocale(LC_ALL, 'es_AR.UTF-8');
-
 write(
     'index',
     'home', [
