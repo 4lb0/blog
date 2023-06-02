@@ -1,6 +1,7 @@
 <?php
 
 setlocale(LC_ALL, 'es_AR.UTF-8');
+date_default_timezone_set('UTC');
 
 require 'vendor/autoload.php';
 
