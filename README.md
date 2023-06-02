@@ -20,3 +20,9 @@ To generate the static content:
 ```bash
 php build.php
 ```
+
+To write a new post, copy the template:
+
+```bash
+cp src/template-post.md pages/post-url.md
+```
