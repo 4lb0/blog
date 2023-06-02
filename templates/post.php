@@ -14,7 +14,18 @@
         <p>
             <?= $description ?>
         </p>
-        <?= $post ?>
+        <?php if ($illustration): ?>
+            <img src="<?= $illustration ?>.svg" class="undraw" alt="" />
+            <?= $post ?>
+            <p>
+                <em>
+                    La Ilustración es de <a href=https://undraw.co/license rel="noopener noreferrer" target=_blank>Katerina Limpitsouni</a>
+                    publicada en <a href=https://undraw.co/ rel="noopener noreferrer" target=_blank>unDraw</a>
+                </em>
+            </p>
+        <?php else: ?>
+            <?= $post ?>
+        <?php endif ?>
     </article>
     <p>
         <em>
