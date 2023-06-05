@@ -100,3 +100,7 @@ function get_image_type($image) {
 function link_tag($tag) {
     return str_replace(' ', '-', strtolower($tag));
 }
+
+function remove_new_lines($text) {
+    return trim(preg_replace('/\s+/', ' ', $text));
+}
