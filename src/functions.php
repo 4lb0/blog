@@ -74,7 +74,7 @@ function get_date_from_list(array $posts): int
 function replace_images($html) {
     if (preg_match_all('/<img src="([^"]+)"/', $html, $matches)) {
         foreach ($matches[1] as $match) {
-            $file = dirname(__DIR__) . '/pages/' . $match;
+            $file = dirname(__DIR__) . '/assets/' . $match;
             $image = file_get_contents($file);
             $type = get_image_type($match);
             $encodedImage = base64_encode($image);
