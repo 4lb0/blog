@@ -3,7 +3,7 @@
 title: No, vim no vale la pena
 tags:
  - Tips
-date: 2023-06-07
+date: 2023-06-09
 template: post
 description: Es el mejor editor de textos, pero aprenderlo lleva mucho esfuerzo. Solamente tenés que aprender lo básico.
 
