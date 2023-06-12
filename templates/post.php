@@ -15,7 +15,7 @@
             <?= $description ?>
         </p>
         <?php if ($illustration): ?>
-            <img src="<?= $illustration ?>.svg" class="undraw" alt="" />
+            <img src="<?= $illustration ?>.svg" class="s" alt="" />
             <?= $post ?>
             <p>
                 <em>
