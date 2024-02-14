@@ -6,7 +6,6 @@ date_default_timezone_set('UTC');
 require 'vendor/autoload.php';
 
 $_ENV = $_SERVER;
-var_dump($_ENV);
 
 Dotenv\Dotenv::createImmutable(__DIR__)->safeLoad();
 
