@@ -19,10 +19,5 @@
         "symfony/yaml": "^5.3",
         "wyrihaximus/html-compress": "^4.1",
         "vlucas/phpdotenv": "^5.4"
-    },
-    "scripts": {
-        "post-install-cmd": [
-          "@php build.php"
-        ]
     }
 }

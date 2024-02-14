@@ -16,7 +16,7 @@ jobs:
       - name: Set up locale
         run: sudo locale-gen es_AR.UTF-8
       - name: Check out repository code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
       - run: composer install
       - run: php build.php
       - name: Deploy
