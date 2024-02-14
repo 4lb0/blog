@@ -3,6 +3,11 @@ on: [push]
 jobs:
   Build-static-site:
     runs-on: ubuntu-latest
+    env:
+      BLOG_TITLE: ${{ secrets.BLOG_TITLE }}
+      BLOG_AUTHOR: ${{ secrets.BLOG_AUTHOR }}
+      BLOG_URL: ${{ secrets.BLOG_URL }}
+      BLOG_LOGO: ${{ secrets.BLOG_LOGO }}
     steps:
       - name: Setup php
         uses: shivammathur/setup-php@v2
@@ -14,11 +19,6 @@ jobs:
         uses: actions/checkout@v2
       - run: composer install
       - run: php build.php
-        env:
-          BLOG_TITLE: ${{ secrets.BLOG_TITLE }}
-          BLOG_AUTHOR: ${{ secrets.BLOG_AUTHOR }}
-          BLOG_URL: ${{ secrets.BLOG_URL }}
-          BLOG_LOGO: ${{ secrets.BLOG_LOGO }}
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
