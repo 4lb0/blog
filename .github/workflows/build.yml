@@ -1,0 +1,28 @@
+name: Deploy site
+on: [push]
+jobs:
+  Build-static-site:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Setup php 
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.0'
+      - name: Set up locale
+        run: sudo locale-gen es_AR.UTF-8
+      - name: Check out repository code
+        uses: actions/checkout@v2
+      - run: composer install
+      - run: php build.php
+        env:
+          BLOG_TITLE: ${{ secrets.BLOG_TITLE }}
+          BLOG_AUTHOR: ${{ secrets.BLOG_AUTHOR }}
+          BLOG_URL: ${{ secrets.BLOG_URL }}
+          BLOG_LOGO: ${{ secrets.BLOG_LOGO }}
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public        
+          publish_branch: static-pages
+          cname: albo.ar
