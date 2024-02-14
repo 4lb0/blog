@@ -4,7 +4,7 @@ jobs:
   Build-static-site:
     runs-on: ubuntu-latest
     steps:
-      - name: Setup php 
+      - name: Setup php
         uses: shivammathur/setup-php@v2
         with:
           php-version: '8.0'
@@ -23,6 +23,6 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./public        
+          publish_dir: ./public
           publish_branch: static-pages
-          cname: albo.ar
+          cname: blog.albo.ar
