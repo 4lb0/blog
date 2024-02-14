@@ -5,7 +5,9 @@ date_default_timezone_set('UTC');
 
 require 'vendor/autoload.php';
 
-Dotenv\Dotenv::createImmutable(__DIR__)->load();
+$_ENV = $_SERVER;
+
+Dotenv\Dotenv::createImmutable(__DIR__)->safeLoad();
 
 define('BLOG_DEFAULT_LOGO', '💡');
 define('BLOG_TAGS_PREFIX', 'tag-');
