@@ -22,6 +22,7 @@
     },
     "scripts": {
         "post-install-cmd": [
+          "touch .env",
           "@php build.php"
         ]
     }
