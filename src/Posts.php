@@ -47,7 +47,7 @@ class Posts
         foreach ($files as $markdownFile) {
             $markdown = static::_get($markdownFile);
             // Don't publish future posts
-            if ($today > new DateTime($markdown['date'])) {
+            if ($today->getTimestamp() <= $markdown['date']) {
                 continue;
             }
             $tags = array_map('link_tag', $markdown['tags']);

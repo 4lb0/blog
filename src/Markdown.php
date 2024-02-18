@@ -19,10 +19,10 @@ class Markdown
             'nofollow' => '',
             'noopener' => 'external',
             'noreferrer' => 'external',
-        ],    
+        ],
     ];
 
-    private function getDefaultAttributes(): array 
+    private function getDefaultAttributes(): array
     {
         return [
             'author' => getenv('BLOG_AUTHOR'),
