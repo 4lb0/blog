@@ -32,6 +32,11 @@ class Posts
         $markdown['file'] = basename($file, '.md');
         $markdown['url'] = $markdown['file'] . '.html';
         $markdown['date'] = (int) $markdown['date'];
+        if ($markdown['last_update']) {
+            $lastUpdate = new DateTime($markdown['last_update']);
+            $lastUpdate->setTime(0, 0, 0);
+            $markdown['last_update'] = $lastUpdate->getTimestamp();
+        }
         $markdown['readingTime'] = ceil(str_word_count($content) / static::AVERAGE_SPEED_READING);
         return $markdown;
     }
