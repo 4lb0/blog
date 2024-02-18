@@ -31,10 +31,13 @@ class Posts
         $markdown = (new Markdown())($content);
         $markdown['file'] = basename($file, '.md');
         $markdown['url'] = $markdown['file'] . '.html';
-        var_dump($markdown['date']);
-        $markdown['date'] = (int) $markdown['date'];
+        $date = new DateTime($markdown['date']);
+        $date->setTime(0, 0, 0);
+        $markdown['date'] = $date->getTimestamp();
         if ($markdown['last_update']) {
-            $markdown['last_update'] = (int) $markdown['last_update'];
+            $lastUpdate = new DateTime($markdown['last_update']);
+            $lastUpdate->setTime(0, 0, 0);
+            $markdown['last_update'] = $lastUpdate->getTimestamp();
         }
         $markdown['readingTime'] = ceil(str_word_count($content) / static::AVERAGE_SPEED_READING);
         return $markdown;
@@ -51,11 +54,10 @@ class Posts
         $today->setTime(0, 0, 0);
         foreach ($files as $markdownFile) {
             $markdown = static::_get($markdownFile);
-            var_dump($markdown["date"], $markdown["last_update"]);
             // Don't publish future posts
-            /* if ($today->getTimestamp() <= $markdown['date']) { */
-            /*     continue; */
-            /* } */
+            if ($today->getTimestamp() <= $markdown['date']) {
+                continue;
+            }
             $tags = array_map('link_tag', $markdown['tags']);
             if (!$tag || in_array($tag, $tags)) {
                 $posts[$markdown['date'] . $markdown['file']] = $markdown;
