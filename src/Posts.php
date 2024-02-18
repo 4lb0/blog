@@ -31,6 +31,7 @@ class Posts
         $markdown = (new Markdown())($content);
         $markdown['file'] = basename($file, '.md');
         $markdown['url'] = $markdown['file'] . '.html';
+        var_dump($markdown['date']);
         $markdown['date'] = (int) $markdown['date'];
         if ($markdown['last_update']) {
             $markdown['last_update'] = (int) $markdown['last_update'];
