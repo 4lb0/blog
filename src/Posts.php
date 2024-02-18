@@ -50,6 +50,7 @@ class Posts
         $today->setTime(0, 0, 0);
         foreach ($files as $markdownFile) {
             $markdown = static::_get($markdownFile);
+            var_dump($markdown["date"], $markdown["last_update"]);
             // Don't publish future posts
             /* if ($today->getTimestamp() <= $markdown['date']) { */
             /*     continue; */
