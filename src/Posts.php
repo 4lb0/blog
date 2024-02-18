@@ -35,13 +35,16 @@ class Posts
 
     static private function _list(string $tag): array
     {
+        var_dump(static::PATH, static::$list);
         if (static::$list) {
             return static::$list;
         }
         $posts = [];
         $files = glob(sprintf(static::PATH, '*'));
+        var_dump($files);
         foreach ($files as $markdownFile) {
             $markdown = static::_get($markdownFile);
+            var_dump($markdown);
             if ($markdown['date'] > time()) {
                 continue;
             }
