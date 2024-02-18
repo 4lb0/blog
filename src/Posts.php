@@ -2,6 +2,8 @@
 
 namespace Blog;
 
+use DateTime;
+
 class Posts
 {
     const PATH = __DIR__ . '/../pages/%s.md';
@@ -35,20 +37,20 @@ class Posts
 
     static private function _list(string $tag): array
     {
-        var_dump(static::PATH, static::$list);
         if (static::$list) {
             return static::$list;
         }
         $posts = [];
         $files = glob(sprintf(static::PATH, '*'));
-        var_dump($files);
+        $today = new DateTime();
+        $today->setTime(0, 0, 0);
         foreach ($files as $markdownFile) {
             $markdown = static::_get($markdownFile);
-            var_dump($markdown);
-            if ($markdown['date'] > time()) {
+            // Don't publish future posts
+            if ($today > new DateTime($markdown['date'])) {
                 continue;
             }
-            $tags = array_map('link_tag', $markdown['tags']); 
+            $tags = array_map('link_tag', $markdown['tags']);
             if (!$tag || in_array($tag, $tags)) {
                 $posts[$markdown['date'] . $markdown['file']] = $markdown;
             }
