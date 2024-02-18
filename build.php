@@ -7,7 +7,7 @@ use Blog\Posts;
 write(
     'index',
     'home', [
-        'posts' => Posts::list(), 
+        'posts' => Posts::list(),
         'date' => get_date_from_list(Posts::list()),
     ]
 );

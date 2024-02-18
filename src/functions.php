@@ -59,7 +59,7 @@ function robotsTxt()
     );
 }
 
-function get_date_from_list(array $posts): int 
+function get_date_from_list(array $posts): int
 {
     $last = 0;
     foreach ($posts as $post) {

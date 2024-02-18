@@ -31,6 +31,7 @@ class Posts
         $markdown = (new Markdown())($content);
         $markdown['file'] = basename($file, '.md');
         $markdown['url'] = $markdown['file'] . '.html';
+        $markdown['date'] = (int) $markdown['date'];
         $markdown['readingTime'] = ceil(str_word_count($content) / static::AVERAGE_SPEED_READING);
         return $markdown;
     }
