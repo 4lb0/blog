@@ -31,10 +31,12 @@ class Posts
         $markdown = (new Markdown())($content);
         $markdown['file'] = basename($file, '.md');
         $markdown['url'] = $markdown['file'] . '.html';
-        $date = new DateTime($markdown['date']);
-        $date->setTime(0, 0, 0);
-        $markdown['date'] = $date->getTimestamp();
-        if ($markdown['last_update']) {
+        if (!is_numeric($markdown['date'])) {
+            $date = new DateTime($markdown['date']);
+            $date->setTime(0, 0, 0);
+            $markdown['date'] = $date->getTimestamp();
+        }
+        if ($markdown['last_update'] && !is_numeric($markdown['last_update'])) {
             $lastUpdate = new DateTime($markdown['last_update']);
             $lastUpdate->setTime(0, 0, 0);
             $markdown['last_update'] = $lastUpdate->getTimestamp();
