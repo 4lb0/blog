@@ -8,7 +8,7 @@ tags:
 date: 2024-02-22
 template: post
 description: Una terminal es una app muy sencilla, solo recibe una entrada y devuelve una salida del shell, pero no, no es sencilla.
-illustration: undraw
+illustration: programmer
 
 ---
 
