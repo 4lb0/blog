@@ -1,4 +1,4 @@
-# 💡 albo.ar
+# ☕ blog.albo.ar
 
 Another static generated blog with Markdown. This time with PHP.
 
