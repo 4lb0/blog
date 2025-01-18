@@ -2,3 +2,4 @@
 vendor
 public/*
 !public/.gitkeep
+composer.phar
