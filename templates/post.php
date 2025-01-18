@@ -27,6 +27,7 @@
             <?= $post ?>
         <?php endif ?>
     </article>
+  </main>
     <p>
         <em>
             Publicado por <strong><?= $author ?? BLOG_AUTHOR ?></strong> el <?= print_date($date) ?>
@@ -36,6 +37,13 @@
             <?php endif; ?>
         </em>
     </p>
+    <p style="color:#902593;padding-top:2em">
+        Este blog respeta tu privacidad, no guarda analíticas ni cookies.
+        Si te gusto este artículo puedes darle me gusta de manera anónima.
     </p>
-  </main>
+    <form method="POST" action="//stats.albo.ar" style="text-align:center">
+        <input type="hidden" name="url" value="<?= BLOG_URL ?>/<?= $url ?>">
+        <input type="email" name="email" placeholder="No escribas nada aca, es solo para bots" aria-hidden="true" />
+        <input type="submit" value="👍" aria-label="Me gusta" style="font-size:2.5em;cursor:pointer" />
+    </form>
 <?php include 'footer.php'; ?>
