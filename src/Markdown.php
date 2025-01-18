@@ -25,7 +25,7 @@ class Markdown
     private function getDefaultAttributes(): array
     {
         return [
-            'author' => getenv('BLOG_AUTHOR'),
+            'author' => BLOG_AUTHOR,
             'last_update' => null,
         ];
 

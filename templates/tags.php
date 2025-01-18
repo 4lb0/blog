@@ -5,7 +5,7 @@
 <?php include 'header.php'; ?>
 <main>
     <h1>
-        <a href="."><?= $_ENV['BLOG_TITLE'] ?></a>
+        <a href="."><?= BLOG_TITLE ?></a>
     </h1>
     <h2>Posts archivados en <em><?= $tagDescriptive ?></em></h2>
 <?php foreach($posts as $post): ?>

@@ -12,7 +12,7 @@ EOD;
 <?php include 'header.php'; ?>
 <main>
     <h1>
-        <?= $_ENV['BLOG_TITLE'] ?>
+        <?= BLOG_TITLE ?>
     </h1>
     <p>
         <em><?= $description ?></em>

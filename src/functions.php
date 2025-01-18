@@ -29,7 +29,7 @@ function write($name, $template, $vars)
 
 function print_date($date): string
 {
-    return strftime('%A %e de %B del %G', $date);
+    return @strftime('%A %e de %B del %G', $date);
 }
 
 function sitemap()
