@@ -2,8 +2,8 @@
 
 title: Una micro app para mandar texto de la compu al celu
 tags:
- - Micro Aplicación
  - Proyectos
+ - Micro Aplicación
  - MVP 
 date: 2021-10-20
 template: post
