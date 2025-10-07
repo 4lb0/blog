@@ -9,7 +9,7 @@ description: No hay soporte oficial para Linux pero siendo una app hecha en Java
 
 ---
 
-<img src="salesforce.svg" alt="Logo de Salesforce" class="s" />
+<img src="salesforce.svg" alt="Logo de Salesforce" />
 
 Primero hay que [descargar el release](https://github.com/forcedotcom/dataloader/releases),
 la última versión en **zip**. Lo extraemos y nos paramos sobre la carpeta creada.

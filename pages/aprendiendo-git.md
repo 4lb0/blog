@@ -12,7 +12,7 @@ description: Git es una aplicación para el manejo del control de versiones. Apr
 
 ---
 
-<img src="git.svg" alt="Logo de git" class="s" />
+<img src="git.svg" alt="Logo de git" />
 
 [Git](https://git-scm.com/) es una aplicación de control de versiones. Asi como el botón de deshacer (Control+Z) del procesador de texto, git te permite volver hacia atrás sobre los cambios que guardaste al hacer *commit*. Pero lo mas importante es que permite compartir archivos y carpetas entre varias personas, y que cada cual haga sus cambios sin que uno pise los cambios de otro.
 
