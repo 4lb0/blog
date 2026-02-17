@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+  <title>Sin comentarios</title>
+  <link>https://blog.albo.ar</link>
+  <description>Blog de Albo</description>
+  <language>es</language>
+  <lastBuildDate>Wed, 03 Dec 2025 00:00:00 +0000</lastBuildDate>
+  <atom:link href="https://blog.albo.ar/rss.xml" rel="self" type="application/rss+xml" />
+  <item>
+    <title>Programar no importa tanto</title>
+    <link>https://blog.albo.ar/programar-no-importa-tanto.html</link>
+    <description>Un día una compañera de laburo me dijo que la programación no era tan importante. Obviamente me tocó una fibra, ¿cómo que mi trabajo no era importante?</description>
+    <pubDate>Wed, 03 Dec 2025 00:00:00 +0000</pubDate>
+    <guid>https://blog.albo.ar/programar-no-importa-tanto.html</guid>
+  </item>
+  <item>
+    <title>Dominios dev.ar</title>
+    <link>https://blog.albo.ar/dominios-dev-ar.html</link>
+    <description>Les cuento la historia del proyecto, como surgió y como sigue.</description>
+    <pubDate>Sat, 08 Feb 2025 00:00:00 +0000</pubDate>
+    <guid>https://blog.albo.ar/dominios-dev-ar.html</guid>
+  </item>
+  <item>
+    <title>Guía para subir webs a Hosting o VPS</title>
+    <link>https://blog.albo.ar/guia-para-subir-webs-a-hosting-o-vps.html</link>
+    <description>Esta guía ofrece un recorrido práctico por los fundamentos del alojamiento web, cubriendo desde la selección de un servicio adecuado hasta la implementación efectiva de sitios web en servidores o VPS.</description>
+    <pubDate>Mon, 08 Apr 2024 00:00:00 +0000</pubDate>
+    <guid>https://blog.albo.ar/guia-para-subir-webs-a-hosting-o-vps.html</guid>
+  </item>
+  <item>
+    <title>Truco de Expresiones Regulares</title>
+    <link>https://blog.albo.ar/truco-de-regexp.html</link>
+    <description>Como matchear con expresiones regulares lo que esta dentro de comillas o tags.</description>
+    <pubDate>Fri, 23 Feb 2024 00:00:00 +0000</pubDate>
+    <guid>https://blog.albo.ar/truco-de-regexp.html</guid>
+  </item>
+  <item>
+    <title>Haciendo una terminal</title>
+    <link>https://blog.albo.ar/haciendo-una-terminal.html</link>
+    <description>Una terminal es una app muy sencilla, solo recibe una entrada y devuelve una salida del shell, pero no, no es sencilla.</description>
+    <pubDate>Thu, 22 Feb 2024 00:00:00 +0000</pubDate>
+    <guid>https://blog.albo.ar/haciendo-una-terminal.html</guid>
+  </item>
+  <item>
+    <title>Mi biblioteca</title>
+    <link>https://blog.albo.ar/mi-biblioteca.html</link>
+    <description>Les muestro mis biblioteca, vestigios de una época donde la gente leía árboles muertos (?)</description>
+    <pubDate>Tue, 20 Jun 2023 00:00:00 +0000</pubDate>
+    <guid>https://blog.albo.ar/mi-biblioteca.html</guid>
+  </item>
+  <item>
+    <title>Aprender a programar es tán fácil como aprender ajedrez</title>
+    <link>https://blog.albo.ar/aprender-a-programar-es-como-aprender-ajedrez.html</link>
+    <description>Las reglas las aprendes en un día. Si te queres dedicar en serio vas a tener que leer libros, practicar, ir a algunas clases, y dedicarle muchas horas.</description>
+    <pubDate>Thu, 15 Jun 2023 00:00:00 +0000</pubDate>
+    <guid>https://blog.albo.ar/aprender-a-programar-es-como-aprender-ajedrez.html</guid>
+  </item>
+  <item>
+    <title>Salesforce Data Loader en Linux</title>
+    <link>https://blog.albo.ar/salesforce-dataloader-linux.html</link>
+    <description>No hay soporte oficial para Linux pero siendo una app hecha en Java funciona sin ningún problema. Te cuento los pasos para instalarla y como ejecutarla.</description>
+    <pubDate>Mon, 12 Jun 2023 00:00:00 +0000</pubDate>
+    <guid>https://blog.albo.ar/salesforce-dataloader-linux.html</guid>
+  </item>
+  <item>
+    <title>No, vim no vale la pena</title>
+    <link>https://blog.albo.ar/vim-no-vale-la-pena.html</link>
+    <description>Es el mejor editor de textos, pero aprenderlo lleva mucho esfuerzo. Solamente tenés que aprender lo básico.</description>
+    <pubDate>Fri, 09 Jun 2023 00:00:00 +0000</pubDate>
+    <guid>https://blog.albo.ar/vim-no-vale-la-pena.html</guid>
+  </item>
+  <item>
+    <title>Optimizaciones del blog</title>
+    <link>https://blog.albo.ar/optimizaciones-del-blog.html</link>
+    <description>Un blog que tiene una imagen y un texto, ¿cuánto mas se puede optimizar?</description>
+    <pubDate>Mon, 05 Jun 2023 00:00:00 +0000</pubDate>
+    <guid>https://blog.albo.ar/optimizaciones-del-blog.html</guid>
+  </item>
+  <item>
+    <title>Otra vez intentando escribir</title>
+    <link>https://blog.albo.ar/otra-vez-intentando-escribir.html</link>
+    <description>Toma dos. Este es otro intento para seguir escribiendo y hacerlo cada vez mas seguido.</description>
+    <pubDate>Thu, 01 Jun 2023 00:00:00 +0000</pubDate>
+    <guid>https://blog.albo.ar/otra-vez-intentando-escribir.html</guid>
+  </item>
+  <item>
+    <title>Búsqueda de respuestas con IA en 3 simples pasos</title>
+    <link>https://blog.albo.ar/busqueda-de-respuestas-con-ia-en-3-simples-pasos.html</link>
+    <description>Tratando de buscar alternativas a ChatGPT me encontré con Hugging Face 🤗 una herramienta que baja modelos pre-entrenados de Procesamiento de Lenguaje Natural (NPL)</description>
+    <pubDate>Fri, 10 Feb 2023 00:00:00 +0000</pubDate>
+    <guid>https://blog.albo.ar/busqueda-de-respuestas-con-ia-en-3-simples-pasos.html</guid>
+  </item>
+  <item>
+    <title>¿Por donde empiezo?</title>
+    <link>https://blog.albo.ar/por-donde-empiezo.html</link>
+    <description>Quiero aprender a programar, ¿qué tengo que hacer?</description>
+    <pubDate>Fri, 25 Nov 2022 00:00:00 +0000</pubDate>
+    <guid>https://blog.albo.ar/por-donde-empiezo.html</guid>
+  </item>
+  <item>
+    <title>¿Qué necesito para programar?</title>
+    <link>https://blog.albo.ar/que-necesito-para-programar.html</link>
+    <description>Para programar solo necesitas una computadora, internet y tiempo.</description>
+    <pubDate>Tue, 04 Oct 2022 00:00:00 +0000</pubDate>
+    <guid>https://blog.albo.ar/que-necesito-para-programar.html</guid>
+  </item>
+  <item>
+    <title>No tan perfecto</title>
+    <link>https://blog.albo.ar/no-tan-perfecto.html</link>
+    <description>Buscando como mejorar la escritura de artículos con lo que conozco sobre el desarrollo.</description>
+    <pubDate>Mon, 03 Oct 2022 00:00:00 +0000</pubDate>
+    <guid>https://blog.albo.ar/no-tan-perfecto.html</guid>
+  </item>
+  <item>
+    <title>Aprendiendo lo básico de git</title>
+    <link>https://blog.albo.ar/aprendiendo-git.html</link>
+    <description>Git es una aplicación para el manejo del control de versiones. Aprendamos lo básico.</description>
+    <pubDate>Thu, 16 Dec 2021 00:00:00 +0000</pubDate>
+    <guid>https://blog.albo.ar/aprendiendo-git.html</guid>
+  </item>
+  <item>
+    <title>Mejorando el servidor interno de PHP</title>
+    <link>https://blog.albo.ar/mejorando-el-servidor-interno-de-php.html</link>
+    <description>Lo que necesitaba era una manera mas fácil de correr LiveReload, varios servidores al mismo tiempo y tener a mano la url del servidor asi que aca esta: phps, el reemplazo a php -S.</description>
+    <pubDate>Tue, 02 Nov 2021 00:00:00 +0000</pubDate>
+    <guid>https://blog.albo.ar/mejorando-el-servidor-interno-de-php.html</guid>
+  </item>
+  <item>
+    <title>Un simple reloj con Petite Vue</title>
+    <link>https://blog.albo.ar/reloj-petite-vue.html</link>
+    <description>Un ejemplo muy corto de Petite Vue que sirve para mostrar la hora en una pestaña del navegador.</description>
+    <pubDate>Tue, 26 Oct 2021 00:00:00 +0000</pubDate>
+    <guid>https://blog.albo.ar/reloj-petite-vue.html</guid>
+  </item>
+  <item>
+    <title>Una micro app para mandar texto de la compu al celu</title>
+    <link>https://blog.albo.ar/alcelu.html</link>
+    <description>Un generador de QR para poder copiar texto desde la compu al celu sin bajar ninguna app.</description>
+    <pubDate>Wed, 20 Oct 2021 00:00:00 +0000</pubDate>
+    <guid>https://blog.albo.ar/alcelu.html</guid>
+  </item>
+  <item>
+    <title>NPdH Capítulo 1:  Un podcast para los que empiezan el mundo de sistemas</title>
+    <link>https://blog.albo.ar/no-paramos-de-hablar-s01e01-que-hacemos.html</link>
+    <description>Primer episodio de No paramos de hablar, un podcast para los que aprenden a programar.</description>
+    <pubDate>Fri, 20 Aug 2021 00:00:00 +0000</pubDate>
+    <guid>https://blog.albo.ar/no-paramos-de-hablar-s01e01-que-hacemos.html</guid>
+  </item>
+</channel>
+</rss>
