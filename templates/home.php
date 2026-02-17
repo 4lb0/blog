@@ -1,7 +1,7 @@
 <?php
 
 $description = <<<EOD
-Cuando me acuerdo, escribo aca sobre programación. Si ves algo mal, una IA lo hizo.
+Cuando me acuerdo, escribo aca sobre programación. Si ves algo mal, una IA lo hizo. Más sobre mí en <a href="//albo.ar">albo.ar</a>.
 EOD;
 ?>
 <?php include 'header.php'; ?>
