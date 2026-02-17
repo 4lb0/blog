@@ -69,17 +69,36 @@ Templates are plain PHP files in `templates/`:
 2. `replace_images()` converts local image refs to base64 data URIs
 3. HTML is minified using `WyriHaximus/HtmlCompress`
 
-### 4. unDraw Illustrations
+### 4. Post Illustrations
 
-In `templates/post.php` (lines 17-18), if `illustration: undraw` is set in frontmatter:
+In `templates/post.php` (lines 17-18), if `illustration` is set in frontmatter:
 
 ```php
 <?php if (isset($illustration) && $illustration): ?>
     <img src="<?= $illustration ?>.svg" alt="" />
 ```
 
-This loads `undraw.svg` from assets. The template also adds attribution:
+This loads `{illustration}.svg` from the `assets/` directory.
+
+**To use an illustration:**
+
+1. Go to [unDraw](https://undraw.co/illustrations) and choose an illustration
+2. Download the SVG file
+3. Save it to `assets/` with the illustration name (e.g., `going_up.svg`)
+4. Add to frontmatter: `illustration: going_up`
+
+The template automatically adds attribution for unDraw illustrations:
 > "La Ilustración es de Katerina Limpitsouni publicada en unDraw"
+
+**Example frontmatter:**
+```yaml
+---
+title: My Post
+illustration: going_up
+tags: [Tutorial]
+date: 2024-01-15
+---
+```
 
 ### 5. Image Handling
 
