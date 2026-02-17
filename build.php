@@ -31,3 +31,4 @@ foreach (Posts::tags() as $tag  => $posts) {
 
 sitemap();
 robotsTxt();
+rss(Posts::list());

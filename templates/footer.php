@@ -1,11 +1,9 @@
   <footer>
     <nav>
         <ul>
-            <li><a href="//albo.ar">Home</a></li>
+            <li><a href="//albo.ar">Acerca de mí</a></li>
             <li><a href="."><?= BLOG_TITLE ?></a></li>
-            <li><a href="//twitter.com/4lb0">Twitter</a>
-            <li><a href="//github.com/4lb0">Github</a>
-            <li><a href="//linkedin.com/in/rodrigoarce">Linkedin</a>
+            <li><a href="rss.xml">RSS</a></li>
             <li><a href="#" aria-label="Volver a leer"><span aria-hidden="true">↑ </span>Arriba</a></li>
         </ul>
     </nav>

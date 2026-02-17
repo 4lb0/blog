@@ -104,3 +104,42 @@ function link_tag($tag) {
 function remove_new_lines($text) {
     return trim(preg_replace('/\s+/', ' ', $text));
 }
+
+function rss(array $posts)
+{
+    $title = htmlspecialchars(BLOG_TITLE);
+    $url = BLOG_URL;
+    $description = htmlspecialchars('Blog de ' . BLOG_AUTHOR);
+    $lastBuildDate = gmdate('r', $posts[array_key_first($posts)]['date'] ?? time());
+    
+    $xml = '<?xml version="1.0" encoding="UTF-8"?>' . "\n";
+    $xml .= '<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">' . "\n";
+    $xml .= '<channel>' . "\n";
+    $xml .= "  <title>$title</title>\n";
+    $xml .= "  <link>$url</link>\n";
+    $xml .= "  <description>$description</description>\n";
+    $xml .= "  <language>es</language>\n";
+    $xml .= "  <lastBuildDate>$lastBuildDate</lastBuildDate>\n";
+    $xml .= "  <atom:link href=\"$url/rss.xml\" rel=\"self\" type=\"application/rss+xml\" />\n";
+    
+    foreach ($posts as $post) {
+        $postTitle = htmlspecialchars($post['title']);
+        $postUrl = "$url/{$post['url']}";
+        $postDesc = htmlspecialchars(strip_tags($post['description']));
+        $postDate = gmdate('r', $post['date']);
+        
+        $xml .= '  <item>' . "\n";
+        $xml .= "    <title>$postTitle</title>\n";
+        $xml .= "    <link>$postUrl</link>\n";
+        $xml .= "    <description>$postDesc</description>\n";
+        $xml .= "    <pubDate>$postDate</pubDate>\n";
+        $xml .= "    <guid>$postUrl</guid>\n";
+        $xml .= '  </item>' . "\n";
+    }
+    
+    $xml .= '</channel>' . "\n";
+    $xml .= '</rss>';
+    
+    echo "Writing rss.xml\n";
+    file_put_contents(__DIR__ . '/../public/rss.xml', $xml);
+}
