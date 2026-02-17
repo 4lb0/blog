@@ -1,12 +1,7 @@
 <?php
 
-$startYear = 2005;
-$totalYears = date('Y') - $startYear;
 $description = <<<EOD
-Hace {$totalYears} años que me pagan por resolver problemas con código.
-Socio de <a href=https://caallboys.com.ar>All Boys</a>.
-Tengo muchos hijos, entre ellos <a href=//pragmore.com>Pragmore</a>.
-Decime <strong>Albo</strong>.
+Cuando me acuerdo, escribo aca sobre programación. Si ves algo mal, una IA lo hizo.
 EOD;
 ?>
 <?php include 'header.php'; ?>
@@ -15,7 +10,9 @@ EOD;
         <?= BLOG_TITLE ?>
     </h1>
     <p>
-        <em><?= $description ?></em>
+        <em>
+            <?= $description ?>
+        </em>
     </p>
 <?php foreach($posts as $post): ?>
     <h2><a href="<?= $post['url'] ?>"><?= $post['title'] ?></a></h2>
