@@ -5,7 +5,7 @@ tags:
 date: 2026-07-21
 template: post
 description: Las tres R de Discovery Kids aplicadas a la programación del día a día.
-illustration: reusereducerecycle
+illustration: recycling
 ---
 
 No, no me volvi ecologista. Esto sigue siendo un blog para programadores (aunque
