@@ -5,8 +5,15 @@
   <link>https://blog.albo.ar</link>
   <description>Blog de Albo</description>
   <language>es</language>
-  <lastBuildDate>Sun, 19 Jul 2026 00:00:00 +0000</lastBuildDate>
+  <lastBuildDate>Tue, 21 Jul 2026 00:00:00 +0000</lastBuildDate>
   <atom:link href="https://blog.albo.ar/rss.xml" rel="self" type="application/rss+xml" />
+  <item>
+    <title>Reutilizar, reducir, reciclar</title>
+    <link>https://blog.albo.ar/reutilizar-reducir-reciclar.html</link>
+    <description>Las tres R de Discovery Kids aplicadas a la programación del día a día.</description>
+    <pubDate>Tue, 21 Jul 2026 00:00:00 +0000</pubDate>
+    <guid>https://blog.albo.ar/reutilizar-reducir-reciclar.html</guid>
+  </item>
   <item>
     <title>No es un compilador, pero es lo mismo</title>
     <link>https://blog.albo.ar/no-es-un-compilador-pero-es-lo-mismo.html</link>
