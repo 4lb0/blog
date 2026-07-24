@@ -13,10 +13,27 @@ description:
 Este skill guía la creación completa de un post: tono, estructura, ilustración
 y archivo final en `pages/`.
 
-## 0. Tema
+## 0. Tema y origen
 
 Si el usuario no dio un tema concreto (o dio algo muy vago), preguntá de qué
-quiere escribir antes de avanzar. Si ya lo dio, seguí directo.
+quiere escribir antes de avanzar.
+
+Aunque el usuario ya haya dado un tema, siempre hay que hacer estas preguntas
+para ampliar el contexto antes de escribir:
+
+1. **¿De dónde salió la idea?** — ¿Fue un comentario de Reddit, un hilo de
+   Twitter, una conversación, un podcast o video, un artículo que leíste, una
+   ducha mental? Esto es el "ramble" que originó el post.
+2. **¿Hay un link a ese ramble?** — Si fue online, pedí la URL concreta del
+   comentario/hilo/tweet (con `?context=3` si es Reddit para dar contexto).
+3. **¿Qué puntos o ángulos querés cubrir?** — ¿Hay algo específico que
+   querés que quede claro? ¿Alguna idea que no querés que se pierda?
+4. **¿Algo más que quieras agregar?** — Pregunta abierta para capturar lo
+   que el usuario no mencionó espontáneamente.
+
+Si el usuario quiere que sea un post 100% humano (sin intervención de IA),
+que lo diga acá. Por defecto se asume que el post se arma con IA a partir
+del ramble.
 
 ## 1. Cargar el estilo propio
 
@@ -46,7 +63,44 @@ Patrones consistentes:
 - Links en markdown a todo lo que se menciona (proyectos, docs, Wikipedia,
   otros posts propios).
 
-## 3. Frontmatter
+## 3. Nota de IA al pie del post
+
+Salvo que el usuario haya pedido explícitamente un post 100% humano, **siempre**
+se agrega al final del cuerpo una nota en cursiva aclarando que el post fue
+generado con IA y linkeando al ramble original. El tono es natural, sin pedir
+disculpas.
+
+Formato base (italiano con `*` o `_`, según el estilo del resto del post):
+
+```
+_Este post fue generado con IA en base a un [intercambio genuino en Reddit](URL)._
+```
+
+Si el ramble no fue online (conversación, charla, idea propia), se adapta:
+
+```
+_Este post fue generado con IA en base a una conversación que tuve con un colega._
+```
+
+Si fue un artículo, podcast o video:
+
+```
+_Este post fue generado con IA en base a [un episodio de tal podcast](URL)._
+```
+
+Si hubo preguntas de la IA para ampliar — como en `panaderias-de-codigo.md` — se
+menciona también:
+
+```
+_Este post fue generado con IA en base a un [post en Reddit](URL), junto a
+respuestas a preguntas que hizo la IA para ampliar lo que pienso._
+```
+
+La nota va **siempre en la última línea del cuerpo**, después del cierre y
+separada por un renglón en blanco. No lleva subtítulo ni sección propia — es un
+detalle suelto al final.
+
+## 4. Frontmatter
 
 Formato exacto (con líneas en blanco después del `---` de apertura y antes
 del de cierre, como en los posts existentes):
@@ -68,11 +122,19 @@ illustration: nombre_del_svg
 
 - `date`: la fecha real de hoy salvo que el usuario indique otra.
 - `tags`: revisar tags ya usados en otros posts (`grep -h "^ -" pages/*.md`)
-  y reusarlos si aplica, en vez de inventar uno nuevo por las dudas.
+  y reusarlos si aplica, en vez de inventar uno nuevo por las dudas. Según el
+  contenido del post, sugerir al usuario los tags existentes que mejor encajen
+  (ej. si habla de IA con tono reflexivo, sugerir `IA` y `Filosofía`).
 - `template`: siempre `post`.
-- `illustration`: el nombre de archivo SIN extensión, ver paso 4.
+- `illustration`: el nombre de archivo SIN extensión, ver paso 5.
 
-## 4. Ilustración de unDraw
+## 5. Ilustración de unDraw
+
+Antes de buscar, revisar qué ilustraciones ya existen para no repetir:
+
+```bash
+ls assets/*.svg
+```
 
 unDraw no tiene una API pública documentada, pero el buscador del sitio pega
 contra un endpoint JSON que se puede usar directo por curl:
@@ -80,6 +142,10 @@ contra un endpoint JSON que se puede usar directo por curl:
 ```bash
 curl -s "https://undraw.co/api/search?query=<termino-en-ingles>"
 ```
+
+La URL equivalente en el navegador sería
+`https://undraw.co/search/<termino-en-ingles>` (ej.
+`https://undraw.co/search/artificial`).
 
 Devuelve algo como:
 
@@ -90,9 +156,11 @@ Devuelve algo como:
 Pasos:
 
 1. Pensar 1-2 palabras clave **en inglés** que resuman el tema del post (ej.
-   "writing", "problem solving", "domain names").
-2. Buscar con ese endpoint (el query tiene que tener 3+ caracteres).
-3. Elegir el resultado que mejor combine con el post.
+   "writing", "problem solving", "artificial", "code").
+2. Buscar con el endpoint (el query tiene que tener 3+ caracteres).
+3. Elegir un resultado que **no esté ya en `assets/`** y que combine con el
+   post. No tiene que ser una ilustración exacta del tema — algo que tenga
+   sentido visual y sirva para que no quede solo texto.
 4. Descargar el SVG directo a `assets/`, usando un nombre de archivo
    descriptivo en snake_case (podés simplificar el `newSlug` sacándole el
    sufijo random, como ya se hizo con `going_up.svg`, `problem_solving.svg`,
@@ -109,14 +177,14 @@ Si ningún resultado convence, probar con otro término antes de forzar uno
 mediocre. La ilustración es opcional: si de verdad no hay nada que quede
 bien, se puede omitir el campo `illustration`.
 
-## 5. Guardar el archivo
+## 6. Guardar el archivo
 
 - Nombre de archivo: slug descriptivo en español, minúsculas, separado por
   guiones, sin `.md` repetido dos veces (ej. `pages/mi-nuevo-post.md`). Ese
   nombre define la URL final.
 - Confirmar que no exista ya un post con ese nombre (`ls pages/`).
 
-## 6. Verificación opcional
+## 7. Verificación opcional
 
 Si el usuario quiere ver el resultado:
 
