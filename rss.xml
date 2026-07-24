@@ -5,8 +5,15 @@
   <link>https://blog.albo.ar</link>
   <description>Blog de Albo</description>
   <language>es</language>
-  <lastBuildDate>Tue, 21 Jul 2026 00:00:00 +0000</lastBuildDate>
+  <lastBuildDate>Thu, 23 Jul 2026 00:00:00 +0000</lastBuildDate>
   <atom:link href="https://blog.albo.ar/rss.xml" rel="self" type="application/rss+xml" />
+  <item>
+    <title>Panaderías de código</title>
+    <link>https://blog.albo.ar/panaderias-de-codigo.html</link>
+    <description>Si cualquiera puede hacer pan, ¿para qué existen las panaderías? Lo mismo pasa con el software y las consultoras.</description>
+    <pubDate>Thu, 23 Jul 2026 00:00:00 +0000</pubDate>
+    <guid>https://blog.albo.ar/panaderias-de-codigo.html</guid>
+  </item>
   <item>
     <title>Reutilizar, reducir, reciclar</title>
     <link>https://blog.albo.ar/reutilizar-reducir-reciclar.html</link>
