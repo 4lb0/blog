@@ -3,3 +3,4 @@ vendor
 public/*
 !public/.gitkeep
 composer.phar
+_db.sqlite3
