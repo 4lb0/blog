@@ -72,16 +72,96 @@ function get_date_from_list(array $posts): int
 }
 
 function replace_images($html) {
-    if (preg_match_all('/<img src="([^"]+)"/', $html, $matches)) {
-        foreach ($matches[1] as $match) {
-            $file = dirname(__DIR__) . '/assets/' . $match;
-            $image = file_get_contents($file);
-            $type = get_image_type($match);
-            $encodedImage = base64_encode($image);
-            $html = str_replace($match, "data:$type;base64,$encodedImage", $html);
+    return preg_replace_callback('/<img\b[^>]*>/i', 'process_image', $html);
+}
+
+/**
+ * Inlines a local <img> and adds the hints that keep the page from shifting.
+ * SVGs are percent-encoded instead of base64: base64 is incompressible, so the
+ * same file costs about a third more bytes on the wire.
+ */
+function process_image(array $match): string {
+    $tag = $match[0];
+
+    if (!preg_match('/\bsrc\s*=\s*(["\'])(.*?)\1/i', $tag, $src)) {
+        return $tag;
+    }
+
+    $path = $src[2];
+    if (preg_match('#^(?:[a-z][a-z0-9+.-]*:)?//#i', $path) || str_starts_with($path, 'data:')) {
+        return $tag;
+    }
+
+    $file = dirname(__DIR__) . '/assets/' . $path;
+    if (!is_file($file)) {
+        return $tag;
+    }
+
+    $type = get_image_type($path);
+    if ($type === 'image/svg+xml') {
+        $uri = "data:$type," . encode_svg($file);
+    } else {
+        $uri = "data:$type;base64," . base64_encode(file_get_contents($file));
+    }
+
+    $tag = preg_replace_callback(
+        '/\bsrc\s*=\s*(["\']).*?\1/i',
+        fn() => "src=\"$uri\"",
+        $tag,
+        1
+    );
+
+    return add_size_attributes($tag, image_size($file, $type));
+}
+
+function encode_svg(string $file): string {
+    $svg = file_get_contents($file);
+    $svg = preg_replace('/<\?xml.*?\?>/s', '', $svg);
+    $svg = preg_replace('/<!DOCTYPE.*?>/is', '', $svg);
+    $svg = preg_replace('/<!--.*?-->/s', '', $svg);
+    $svg = trim(preg_replace('/\s+/', ' ', $svg));
+
+    return strtr(rawurlencode($svg), [
+        '!' => '%21', "'" => '%27', '(' => '%28', ')' => '%29', '*' => '%2A',
+    ]);
+}
+
+function image_size(string $file, string $type): ?array {
+    if ($type === 'image/svg+xml') {
+        $svg = file_get_contents($file);
+        // The declared width/height is the intended size; viewBox is the fallback.
+        if (preg_match('/\bwidth\s*=\s*(["\'])([\d.]+)[^>]*?\bheight\s*=\s*(["\'])([\d.]+)\3/i', $svg, $m)) {
+            return [(int) round($m[2]), (int) round($m[4])];
+        }
+        if (preg_match('/viewBox\s*=\s*(["\'])\s*[-\d.]+[\s,]+[-\d.]+[\s,]+([\d.]+)[\s,]+([\d.]+)\s*\1/i', $svg, $m)) {
+            return [(int) round($m[2]), (int) round($m[3])];
+        }
+        return null;
+    }
+
+    $size = @getimagesize($file);
+    return $size ? [$size[0], $size[1]] : null;
+}
+
+function add_size_attributes(string $tag, ?array $size): string {
+    if ($size) {
+        foreach (['width', 'height'] as $i => $attribute) {
+            if (!preg_match('/\b' . $attribute . '\s*=/i', $tag)) {
+                $tag = add_attribute($tag, $attribute, $size[$i]);
+            }
         }
     }
-    return $html;
+    if (!preg_match('/\bloading\s*=/i', $tag)) {
+        $tag = add_attribute($tag, 'loading', 'lazy');
+    }
+    if (!preg_match('/\bdecoding\s*=/i', $tag)) {
+        $tag = add_attribute($tag, 'decoding', 'async');
+    }
+    return $tag;
+}
+
+function add_attribute(string $tag, string $name, $value): string {
+    return preg_replace('/\s*\/?>$/', " $name=\"$value\">", $tag, 1);
 }
 
 function get_image_type($image) {

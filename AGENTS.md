@@ -102,15 +102,18 @@ date: 2024-01-15
 
 ### 5. Image Handling
 
-Images in `assets/` are **inlined as base64** during build:
+Every local `<img src="file">` pointing at `assets/` is inlined during build by
+`replace_images()` in `src/functions.php`, and gets `width`, `height`,
+`loading="lazy"` and `decoding="async"` so the page doesn't shift while loading:
 
-```php
-// From functions.php
-function replace_images($html) {
-    // Finds <img src="filename.jpg"> 
-    // Replaces with <img src="data:image/jpeg;base64,...">
-}
-```
+- **SVG** → percent-encoded data URI (`data:image/svg+xml,%3Csvg...`). Not
+  base64: base64 is incompressible, so the same file costs ~33% more on the
+  wire even with brotli.
+- **JPEG / PNG** → base64 data URI (`data:image/jpeg;base64,...`).
+
+External URLs (`//`, `https:`) and existing `data:` URIs are left untouched.
+`width`/`height` come from `getimagesize()` for raster files and from the
+`width`/`height` attributes (falling back to `viewBox`) for SVG.
 
 Supported formats: SVG, JPEG, PNG
 
