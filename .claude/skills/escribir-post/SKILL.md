@@ -1,11 +1,12 @@
 ---
 name: escribir-post
-description:
+description: >-
   Crea un post nuevo para el blog de punta a punta: redacta el contenido con
-  el estilo propio del autor (estilo-propio/SKILL.md), busca y descarga una
+  el estilo propio del autor (skill estilo-propio), busca y descarga una
   ilustración SVG de unDraw para assets/, arma el frontmatter y guarda el
-  archivo en pages/. Usar cuando el usuario pida escribir, redactar, armar o
-  publicar un nuevo post del blog.
+  archivo en pages/. Usar cuando el usuario pida escribir, redactar, armar,
+  convertir o publicar un post del blog, incluso si pega material crudo (un
+  chat, un hilo de Reddit, notas sueltas) y dice "convertí esto en un post".
 ---
 
 # Escribir un post nuevo
@@ -35,17 +36,45 @@ Si el usuario quiere que sea un post 100% humano (sin intervención de IA),
 que lo diga acá. Por defecto se asume que el post se arma con IA a partir
 del ramble.
 
-## 1. Cargar el estilo propio
+## 1. Definir el eje (antes de escribir una línea)
 
-Antes de escribir una sola línea, leé **`estilo-propio/SKILL.md`** (raíz del
-repo) completo y aplicá esa voz: vos rioplatense, tono cercano, muletillas
-("Bueno", "Aca", arrancar un párrafo con "No" para contradecir), oraciones
-cortas, humor auto-despreciativo, links generosos, sin bajar línea, sin
-emojis, sin relleno.
+El material crudo casi nunca es un post. Un chat, un hilo o una lista de notas
+tiene idas y vueltas, temas mezclados y respuestas que solo tienen sentido en
+contexto. **El post no es un resumen del material: es un texto nuevo que lo
+usa como insumo.**
 
-## 2. Estructura del post (según los últimos posts del blog)
+Si el material tiene dos conversaciones o dos temas, no las pongas una abajo de
+la otra con subtítulos. Eso se lee como chat pegado. Elegí **un solo eje** que
+contenga lo importante y descartá lo que no cuelga de ahí.
 
-Reviso siempre 2-3 posts recientes de `pages/*.md` (ordenados por el campo
+Antes de escribir, acordá con el usuario:
+
+1. **Eje**: ¿cuál es la idea que sostiene todo el post? (ej. "el contexto
+   cuesta", "cuándo no usar un agente", "tips para X").
+2. **Tono**: seco y técnico, filoso, charla de laburo, o el registro habitual
+   del blog.
+3. **Largo**: corto (~600 palabras), medio (900-1200) o largo con ejemplos.
+4. **Origen**: ¿se menciona el hilo/debate que lo originó, se citan mensajes,
+   o el post se sostiene solo?
+5. **Audiencia**: dev que ya usa la herramienta o alguien que recién arranca.
+
+Con esas respuestas armá un esqueleto de 3 a 5 secciones y recién ahí
+redactá. Si algo del material no entra en el eje, no lo fuerces: se descarta.
+
+## 2. Cargar el estilo propio
+
+Antes de escribir una sola línea, cargá el skill **`estilo-propio`** (está en
+`~/.agents/skills/estilo-propio/SKILL.md`) y aplicá esa voz: vos rioplatense,
+tono cercano, muletillas ("Bueno", "Aca", arrancar un párrafo con "No" para
+contradecir), oraciones cortas, humor auto-despreciativo, links generosos, sin
+bajar línea, sin emojis, sin relleno.
+
+Si el usuario eligió un tono distinto en el paso 1, ese manda, pero la voz de
+base sigue siendo la misma.
+
+## 3. Estructura del post (según los últimos posts del blog)
+
+Revisá siempre 2-3 posts recientes de `pages/*.md` (ordenados por el campo
 `date`, no por fecha de archivo) antes de escribir, para no perder la mano.
 Patrones consistentes:
 
@@ -63,7 +92,7 @@ Patrones consistentes:
 - Links en markdown a todo lo que se menciona (proyectos, docs, Wikipedia,
   otros posts propios).
 
-## 3. Nota de IA al pie del post
+## 4. Nota de IA al pie del post
 
 Salvo que el usuario haya pedido explícitamente un post 100% humano, **siempre**
 se agrega al final del cuerpo una nota en cursiva aclarando que el post fue
@@ -98,9 +127,10 @@ respuestas a preguntas que hizo la IA para ampliar lo que pienso._
 
 La nota va **siempre en la última línea del cuerpo**, después del cierre y
 separada por un renglón en blanco. No lleva subtítulo ni sección propia — es un
-detalle suelto al final.
+detalle suelto al final. Si el usuario pidió no mencionar el hilo original, la
+nota se adapta (sin link, sin detalles del intercambio) pero **no se omite**.
 
-## 4. Frontmatter
+## 5. Frontmatter
 
 Formato exacto (con líneas en blanco después del `---` de apertura y antes
 del de cierre, como en los posts existentes):
@@ -121,14 +151,14 @@ illustration: nombre_del_svg
 ```
 
 - `date`: la fecha real de hoy salvo que el usuario indique otra.
-- `tags`: revisar tags ya usados en otros posts (`grep -h "^ -" pages/*.md`)
+- `tags`: revisar tags ya usados en otros posts (`grep -h "^ *-" pages/*.md`)
   y reusarlos si aplica, en vez de inventar uno nuevo por las dudas. Según el
   contenido del post, sugerir al usuario los tags existentes que mejor encajen
   (ej. si habla de IA con tono reflexivo, sugerir `IA` y `Filosofía`).
 - `template`: siempre `post`.
-- `illustration`: el nombre de archivo SIN extensión, ver paso 5.
+- `illustration`: el nombre de archivo SIN extensión, ver paso 6.
 
-## 5. Ilustración de unDraw
+## 6. Ilustración de unDraw
 
 Antes de buscar, revisar qué ilustraciones ya existen para no repetir:
 
@@ -136,27 +166,26 @@ Antes de buscar, revisar qué ilustraciones ya existen para no repetir:
 ls assets/*.svg
 ```
 
-unDraw no tiene una API pública documentada, pero el buscador del sitio pega
-contra un endpoint JSON que se puede usar directo por curl:
+unDraw no tiene una API pública documentada. El buscador del sitio pega contra
+este endpoint (el parámetro es **`q`**, `query` ya no funciona y devuelve 400):
 
 ```bash
-curl -s "https://undraw.co/api/search?query=<termino-en-ingles>"
+curl -s "https://undraw.co/api/search?q=<termino-en-ingles>"
 ```
 
-La URL equivalente en el navegador sería
-`https://undraw.co/search/<termino-en-ingles>` (ej.
-`https://undraw.co/search/artificial`).
+La URL equivalente en el navegador es `https://undraw.co/search/<termino>`
+(ej. `https://undraw.co/search/agent`).
 
 Devuelve algo como:
 
 ```json
-{"results":[{"title":"Programmer","newSlug":"programmer_raqr","media":"https://cdn.undraw.co/illustration/programmer_raqr.svg"}, ...]}
+{"results":[{"title":"AI Agent","newSlug":"ai-agent_pdkp","media":"https://cdn.undraw.co/illustration/ai-agent_pdkp.svg"}, ...]}
 ```
 
 Pasos:
 
 1. Pensar 1-2 palabras clave **en inglés** que resuman el tema del post (ej.
-   "writing", "problem solving", "artificial", "code").
+   "writing", "agent", "code review", "server").
 2. Buscar con el endpoint (el query tiene que tener 3+ caracteres).
 3. Elegir un resultado que **no esté ya en `assets/`** y que combine con el
    post. No tiene que ser una ilustración exacta del tema — algo que tenga
@@ -167,30 +196,76 @@ Pasos:
    `file_searching.svg` en el repo):
 
 ```bash
-curl -s "https://cdn.undraw.co/illustration/programmer_raqr.svg" -o assets/nombre_elegido.svg
+curl -s "https://cdn.undraw.co/illustration/ai-agent_pdkp.svg" -o assets/ai_agent.svg
 ```
 
 5. Poner ese mismo nombre (sin `.svg`) en el campo `illustration` del
    frontmatter.
 
+Si el endpoint no responde, alternativa que funciona: el paquete npm
+`undraw-svg` trae la colección completa.
+
+```bash
+cd /tmp && npm pack undraw-svg --silent && tar tzf undraw-svg-*.tgz | grep svgs/
+tar xzf undraw-svg-*.tgz package/svgs/ai-agent.svg
+```
+
+**Ojo con el tamaño del SVG.** `image_size()` en `src/functions.php` busca
+`width` y `height` en el root del SVG; si no están, cae al `viewBox`, pero el
+regex de width/height puede matchear un `stroke-width="3"` de cualquier path y
+dejar la imagen con `height="3"`. Los SVG del CDN de unDraw traen `width` y
+`height`; los del paquete npm vienen solo con `viewBox`, así que hay que
+agregárselos al root antes de usarlos:
+
+```xml
+<svg xmlns="http://www.w3.org/2000/svg" width="799" height="618" viewBox="0 0 799.031 618.112">
+```
+
+Después de compilar, verificá que el `<img>` generado tenga el tamaño correcto
+(no `height=3`).
+
 Si ningún resultado convence, probar con otro término antes de forzar uno
 mediocre. La ilustración es opcional: si de verdad no hay nada que quede
 bien, se puede omitir el campo `illustration`.
 
-## 6. Guardar el archivo
+## 7. Guardar el archivo
 
 - Nombre de archivo: slug descriptivo en español, minúsculas, separado por
   guiones, sin `.md` repetido dos veces (ej. `pages/mi-nuevo-post.md`). Ese
   nombre define la URL final.
 - Confirmar que no exista ya un post con ese nombre (`ls pages/`).
 
-## 7. Verificación opcional
+## 8. Verificar
 
-Si el usuario quiere ver el resultado:
+Compilá el sitio. Si no hay PHP instalado en la máquina, está la imagen Docker
+del repo (Alpine + PHP 8.3, ~42 MB):
 
 ```bash
-php build.php
+docker build -t blog-build .
+docker run --rm -v "$PWD/public:/app/public" blog-build
+```
+
+Con PHP local alcanza con `php build.php`.
+
+Checklist antes de dar el post por terminado:
+
+- [ ] El HTML del post se generó en `public/<slug>.html`.
+- [ ] La ilustración aparece, está inlinada como `data:image/svg+xml` y tiene
+      `width`/`height` coherentes (no `height=3`).
+- [ ] El cuerpo no repite el título ni la descripción.
+- [ ] La nota de IA está en la última línea.
+- [ ] El post se sostiene solo: se entiende sin haber leído el chat original.
+- [ ] Los links abren y apuntan a lo que dicen.
+
+Para verlo en el navegador:
+
+```bash
 php -S 127.0.0.1:8000 -t public app.php
 ```
 
-No hace falta hacer commit ni push salvo que el usuario lo pida explícitamente.
+## 9. Commit
+
+El post va en su propio commit, con el mensaje que usa el repo (`Post <título>`).
+Si el usuario pide cambios y el commit todavía no se pusheó, se **amend**; si ya
+está en el remoto, un commit de fix aparte. Nunca force-push, nunca push sin
+pedido explícito.
