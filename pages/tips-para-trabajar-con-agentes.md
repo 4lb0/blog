@@ -72,3 +72,6 @@ La mitad podría ser un cron.
 
 Al final el mejor tip es el más aburrido: entender cuánto cuesta cada cosa y no
 automatizar por deporte.
+
+_Este post fue generado con IA en base a una conversación sobre cómo trabajar con
+agentes._
