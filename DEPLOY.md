@@ -18,6 +18,13 @@ GitHub Pages hardcodes `Cache-Control: max-age=600` on HTML and ignores
 (http.host eq "blog.albo.ar" and not http.request.uri.path in {"/" "/index.html" "/rss.xml" "/sitemap.xml"})
 ```
 
+Apply it from the dashboard, or re-apply it from a shell (token with
+`Zone → Cache Rules → Edit`, scoped to the zone):
+
+```sh
+CLOUDFLARE_API_TOKEN=... CLOUDFLARE_ZONE_ID=... scripts/cache-rule.sh
+```
+
 | setting            | value                                      |
 | ------------------ | ------------------------------------------ |
 | Cache eligibility  | Eligible for cache                         |
