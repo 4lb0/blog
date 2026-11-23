@@ -181,6 +181,23 @@ php build.php
 composer install
 ```
 
+### Docker
+
+There is a lightweight Alpine image (~42 MB) with PHP 8.3 to run the build
+without installing PHP locally:
+
+```bash
+# Build the image (installs Composer deps in a separate stage)
+docker build -t blog-build .
+
+# Generate the static site into ./public
+docker run --rm -v "$PWD/public:/app/public" blog-build
+```
+
+The image copies only `build.php`, `common.php`, `src/`, `templates/`,
+`pages/` and `assets/`. `public/` is mounted so the output lands on the host.
+Use `-u "$(id -u):$(id -g)"` if you don't want root-owned files.
+
 ## Deployment
 
 GitHub Actions workflow (`.github/workflows/build.yml`):

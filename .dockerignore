@@ -1,0 +1,12 @@
+.git
+.github
+.opencode
+.claude
+vendor
+public
+.env
+_db.sqlite3
+composer.phar
+Dockerfile
+.dockerignore
+.DS_Store
