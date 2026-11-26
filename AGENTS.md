@@ -183,7 +183,7 @@ composer install
 
 ### Docker
 
-There is a lightweight Alpine image (~42 MB) with PHP 8.3 to run the build
+There is a lightweight Alpine image (~45 MB) with PHP 8.4 to run the build
 without installing PHP locally:
 
 ```bash
@@ -203,7 +203,7 @@ Use `-u "$(id -u):$(id -g)"` if you don't want root-owned files.
 GitHub Actions workflow (`.github/workflows/build.yml`):
 
 1. Checkout repository
-2. Setup PHP 8.1
+2. Setup PHP 8.4
 3. `composer install`
 4. `php build.php` → Generates `public/`
 5. Deploy `public/` to `static-pages` branch
@@ -223,4 +223,5 @@ GitHub Actions workflow (`.github/workflows/build.yml`):
 - Tag pages use the **first tag** only for grouping
 - Reading time is calculated at build time
 - All dates are stored as Unix timestamps internally
-- Spanish locale (`es_AR.UTF-8`) is set for date formatting
+- Dates are formatted in Spanish by `print_date()` with day/month names in PHP,
+  so the output doesn't depend on the system locale being generated

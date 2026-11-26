@@ -29,7 +29,21 @@ function write($name, $template, $vars)
 
 function print_date($date): string
 {
-    return @strftime('%A %e de %B del %G', $date);
+    static $days = ['domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado'];
+    static $months = [
+        'enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio',
+        'julio', 'agosto', 'septiembre', 'octubre', 'noviembre', 'diciembre',
+    ];
+
+    // gmdate y no date: las fechas se parsean en UTC (ver common.php), así el
+    // día no se corre si alguien cambia la zona por defecto.
+    return sprintf(
+        '%s %d de %s del %s',
+        $days[(int) gmdate('w', $date)],
+        (int) gmdate('j', $date),
+        $months[(int) gmdate('n', $date) - 1],
+        gmdate('Y', $date)
+    );
 }
 
 function sitemap()
