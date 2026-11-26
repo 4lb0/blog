@@ -183,7 +183,7 @@ composer install
 
 ### Docker
 
-There is a lightweight Alpine image (~45 MB) with PHP 8.4 to run the build
+There is a lightweight Alpine image (~55 MB) with PHP 8.4 to run the build
 without installing PHP locally:
 
 ```bash

@@ -6,6 +6,7 @@ FROM alpine:3.21 AS vendor
 RUN apk add --no-cache \
         php84 php84-phar php84-openssl php84-mbstring php84-dom \
         php84-xml php84-simplexml php84-tokenizer php84-iconv php84-ctype \
+        php84-fileinfo \
         unzip \
     && ln -s /usr/bin/php84 /usr/local/bin/php
 
@@ -21,6 +22,7 @@ FROM alpine:3.21
 RUN apk add --no-cache \
         php84 php84-phar php84-openssl php84-mbstring php84-dom \
         php84-xml php84-simplexml php84-tokenizer php84-iconv php84-ctype \
+        php84-fileinfo \
     && ln -s /usr/bin/php84 /usr/local/bin/php
 
 WORKDIR /app
